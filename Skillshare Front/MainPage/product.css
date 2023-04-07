@@ -1,0 +1,79 @@
+    /* Style for the product section */
+  #product {
+    padding: 50px;
+    text-align: center;
+    background-color: #8D86C9;
+  }
+  
+  /* Style for the user-levels container */
+  .user-levels {
+    display: flex;
+  }
+  
+  /* Style for the user-level container */
+  .user-level {
+    background-color: white;
+    position: relative;
+    margin: auto;
+    padding: 20px;
+    min-height: 500px;
+    text-align: center;
+    border-radius: 20px;
+  }
+  
+  /* Style for the JoinUs button */
+  .JoinUs-btn {
+    background-color: #397367;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    font-weight: bold;
+    /* position: absolute; */
+    /* bottom: 20px; */
+    /* left: 0; */
+    width: 100%;
+    border-radius: 7px;
+
+  }
+  
+  /* Style for the JoinUs button on hover */
+  .JoinUs-btn:hover {
+    background-color: #5DA399;
+  }
+  
+  /* Style for the user-level title */
+  .user-level h2 {
+    font-size: 28px;
+    margin-top: 10px;
+    margin-bottom: 40px;    
+  }
+  
+  /* Style for the ordered list */
+  .user-level ol {
+    text-align: left;
+    padding: 0;
+  }
+  
+  /* Style for the list items */
+  .user-level li {
+    margin-bottom: 10px;
+    list-style: none;
+  }
+  
+  /* Style for the last list item */
+  .user-level li:last-child {
+    background-color: #ddd;
+    padding: 5px;
+    border-radius: 5px;
+  }
+
+  @media screen and (max-width: 800px) {
+    .user-levels {
+      flex-direction: column;
+    }
+    .user-level {
+      flex-basis: 100%;
+      /* height: 800px; */
+    }
+    
+  }

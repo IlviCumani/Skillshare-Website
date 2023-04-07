@@ -1,0 +1,133 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: white;
+}
+
+.header-text{
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+}
+
+.logo img{
+    margin-right: 10px;
+    width: 60px;
+    height: 60px;
+}
+
+.logo h1{
+    color: #8D86C9;
+    font-family: "Open Sans", sans-serif;
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list li{
+    margin: 0 10px;
+}
+
+
+.nav-list{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 10px;
+}
+
+.nav-list ul{
+    list-style: none;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list li{
+    margin: 0px 10px;
+}
+
+.nav-list li:last-child> a{
+    background-color: #397367;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 0 10px;
+}
+
+.nav-list li a{
+    --s: 0.1em;
+    --c: #397367;
+
+    font-family: "Open Sans", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #8D86C9;
+    transition: 0.2s;
+
+    padding-bottom: var(--s);
+    background: 
+      linear-gradient(90deg,var(--c) 50%,#000 0) calc(100% - var(--_p,0%))/200% 100%,
+      linear-gradient(var(--c) 0 0) 0% 100%/var(--_p,0%) var(--s) no-repeat;
+    -webkit-background-clip: text,padding-box;
+            background-clip: text,padding-box;
+    transition: 0.5s;
+}
+
+.nav-list li:not(:last-child) a:hover{
+    color: #397367;
+    --_p: 100%
+}
+
+.nav-list li:last-child> a:hover{
+    background-color: #5DA399;
+    color: #fff;
+}
+
+@media (max-width: 800px){
+    .nav-list li:last-child> a{
+        background-color: #397367;
+        color: #fff;
+        padding: 5px;
+        border-radius: 2px;
+        margin: 0 10px;
+    }
+    
+    .nav-list li a{
+        font-family: "Open Sans", sans-serif;
+        font-size: 15px;
+        font-weight: 500;
+        text-decoration: none;
+        color: #8D86C9;
+        transition: 0.2s;
+    }
+
+    .logo h1{
+        color: #8D86C9;
+        font-family: "Open Sans", sans-serif;
+        font-size: 20px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .logo img{
+        margin-right: 10px;
+        width: 40px;
+        height: 40px;
+    }
+} 

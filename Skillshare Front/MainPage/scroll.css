@@ -18,8 +18,8 @@ body {
   
   ::-webkit-scrollbar-thumb {
       border-radius: 10px;
-      background: #8881c0;
+      background: #508d84;
   }
   ::-webkit-scrollbar-thumb:window-inactive {
-      background: #9790d8a9; 
+      background: #67b6aad5; 
   }

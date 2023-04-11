@@ -1,0 +1,25 @@
+body {
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+
+  body::-webkit-scrollbar {
+      width: 8px;
+  }
+  
+  body.thin::-webkit-scrollbar {
+      width: 2px;
+  }
+  
+  ::-webkit-scrollbar-track {
+      border-radius: 10px;
+      background: #ffffff;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background: #8881c0;
+  }
+  ::-webkit-scrollbar-thumb:window-inactive {
+      background: #9790d8a9; 
+  }

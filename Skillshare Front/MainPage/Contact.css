@@ -1,29 +1,29 @@
 .contact{
-    width: 100%;
-    margin: auto;
-    text-align: center;
-    padding-top: 15vh;
-    padding-bottom: 5vh;
-  }
-  .contact h1{
-    font-size: 4vh;
-  }
-  .contact p{
-    font-size: 2.5vh;
-    padding-top: 2vh;
-    color: rgb(37, 37, 37);
-  }
-  .contact div{
-    font-size: 5vh;
-    margin-top: 10vh;
-  }
-  .contact a{
-    color: black;
-  }
-  .contact a:hover{
-    color: white;
-    transition: 0.2s;
-  }
-  .email{
-    padding-top: 1.5vh;
-  }
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  padding-top: 15vh;
+  padding-bottom: 5vh;
+}
+.contact h1{
+  font-size: 4vh;
+}
+.contact p{
+  font-size: 2.5vh;
+  padding-top: 2vh;
+  color: rgb(37, 37, 37);
+}
+.contact div{
+  font-size: 5vh;
+  margin-top: 10vh;
+}
+.contact a{
+  color: black;
+}
+.contact a:hover{
+  color: #5DA399;
+  transition: 0.4s;
+}
+.email{
+  padding-top: 1.5vh;
+}

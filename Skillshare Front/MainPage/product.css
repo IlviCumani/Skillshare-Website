@@ -39,6 +39,7 @@
   /* Style for the JoinUs button on hover */
   .JoinUs-btn:hover {
     background-color: #5DA399;
+    transition: 0.25s;
   }
   
   /* Style for the user-level title */

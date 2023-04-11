@@ -21,7 +21,7 @@
     color: black;
   }
   .contact a:hover{
-    color: #8D86C9;
+    color: white;
     transition: 0.2s;
   }
   .email{

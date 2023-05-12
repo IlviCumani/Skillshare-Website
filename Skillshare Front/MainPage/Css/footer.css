@@ -4,7 +4,7 @@
     text-align: center;
     padding-top: 4vh;
     padding-bottom: 1.5vh;
-    background: #b0a9ee;
+    background: #414145;
     background-position: center;
     background-size: cover;
     position: relative;
@@ -12,9 +12,16 @@
   }
   .footer p{
     margin-bottom: 0.5vh;
+    color: #fff;
+
   }
+
+  .icons_width{
+    color: #8D86C9;
+  }
+
   .icons_width i:hover{
-    color: white;
+    color: #397367;
     transition: 0.2s;
   }
   

@@ -18,6 +18,8 @@
     <title>Skillshare360</title>
     <script src="https://kit.fontawesome.com/ad806ed620.js" crossorigin="anonymous"></script>
 </head>
+
+
 <body>
     <header id="header">
         <div class="logo">
@@ -25,11 +27,14 @@
             <h1>Skillshare360</h1>
         </div>
         <nav>
+                <button class="menu-button">
+                  <span>...</span>
+                </button>
                 <ul class="nav-list">
                     <li><a href="#header">Home</a></li>
                     <li><a href="#about-us">About</a></li>
                     <li><a href="#contact">Contact Us</a></li>
-                    <li><a href="signup.html">Join Us</a></li>
+                    <li><a href="../RegisterPage/SignUpPage/signup.html">Join Us</a></li>
                 </ul>
         </nav>
     </header>
@@ -87,7 +92,6 @@
     </section>
     <section id="about-us">
         <h2>About Us</h2>
-        <div id="about-us-content">
             <div id="about-us-paragraph">
                 <p>We are a team of passionate educators and technology enthusiasts who believe that everyone has the right to access quality education. Our mission is to make learning more accessible, fun, and engaging for everyone, anywhere.</p>
                 <p>At Skillshare360, we are passionate about helping people 
@@ -100,10 +104,6 @@
                 </p>
                 <p>Join us today and take the first step towards your learning journey!</p>
             </div>
-            <div id="about-us-img">
-                <img src="/MainPage/MainImg/1.jpg" alt="img">
-            </div>
-        </div>
     </section>
     <section class="contact" id="contact">
         <nav>
@@ -125,5 +125,21 @@
           <p>Skillshare360 © 2023.<br>All rights reserved.</p>
         </nav>
       </section>
+      <script>
+          const joinButtons = document.querySelectorAll('.JoinUs-btn');
+          const [menuButton] = document.getElementsByClassName('menu-button');
+          
+          joinButtons.forEach(button => {
+            button.addEventListener('click', () => {
+              window.location.href = '../RegisterPage/SignUpPage/signup.html';
+            });
+          });
+
+          menuButton.addEventListener('click', () => {
+          const menuLinks = document.querySelector('ul.nav-list');
+          toggleClass(menuLinks, 'show');
+          });
+
+      </script>
 </body>
 </html>

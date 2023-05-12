@@ -8,6 +8,8 @@
   /* Style for the user-levels container */
   .user-levels {
     display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
   }
   
   /* Style for the user-level container */
@@ -28,9 +30,6 @@
     border: none;
     padding: 10px;
     font-weight: bold;
-    /* position: absolute; */
-    /* bottom: 20px; */
-    /* left: 0; */
     width: 100%;
     border-radius: 7px;
 
@@ -71,6 +70,7 @@
   @media screen and (max-width: 800px) {
     .user-levels {
       flex-direction: column;
+     
     }
     .user-level {
       flex-basis: 100%;

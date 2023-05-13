@@ -7,9 +7,10 @@
   padding-bottom: 5vh;
 }
 .contact h1{
-  font-size: 4vh;
+  font-weight: bold;
   color: #fff;
 }
+
 .contact p{
   font-size: 2.5vh;
   padding-top: 2vh;

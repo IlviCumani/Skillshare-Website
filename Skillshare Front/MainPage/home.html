@@ -12,8 +12,10 @@
     <link rel="stylesheet" href="Css\Contact.css">
     <link rel="stylesheet" href="Css\footer.css">
     <link rel="stylesheet" href="Css\scroll.css">
+    <!-- <link rel="stylesheet" href="Css/modal.css"> -->
     <link rel="shortcut icon" type="image/x-icon" href="">
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@700&display=swap" rel="stylesheet">
+    
     <title>Skillshare360</title>
     <script src="https://kit.fontawesome.com/ad806ed620.js" crossorigin="anonymous"></script>
 </head>
@@ -30,14 +32,15 @@
                   <span>...</span>
                 </button>
                 <ul class="nav-list">
-                    <li><a href="#header">Home</a></li>
+                    <li><a href="#hero">Home</a></li>
                     <li><a href="#about-us">About</a></li>
                     <li><a href="#contact">Contact Us</a></li>
-                    <li><a href="../RegisterPage/SignUpPage/signup.html">Join Us</a></li>
+                    <li><a href="../RegisterPage/LoginPage/login.html">Login</a></li>
                 </ul>
+                <!-- <button id="LoginBtn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button> -->
         </nav>
     </header>
-    <section class="hero">
+    <section class="hero" id="hero">
         <div class="content">
             <h2>Your all-in-one learning destination</h2>
             <p>Unlock your potential with our expert-led courses. Whether you're looking to learn a new skill, deepen your knowledge, or jumpstart your career, we have everything you need to succeed. Join our community of learners and start your journey today!</p>
@@ -105,14 +108,12 @@
             </div>
     </section>
     <section class="contact" id="contact">
-        <nav>
           <h1>Contact</h1>
           <p>You can contact us by e-mail by clicking the icon below or by using social media linked at the footer.</p>
           <div>
             <a><i class="fas fa-envelope fa-5x"></i></a>
             <p class="email">Email</p>
           </div>
-        </nav>
       </section>
        <section class="footer">
         <nav class="icons_width">
@@ -121,7 +122,7 @@
             <a><i class="fab fa-instagram fa-2x"></i></a>
             <a><i class="fas fa-envelope fa-2x"></i></a>
           </div>
-          <p>Skillshare360 © 2023.<br>All rights reserved.</p>
+          <p id="rights">Skillshare360 © 2023.<br>All rights reserved.</p>
         </nav>
       </section>
       <script>
@@ -145,5 +146,7 @@
               element.classList.add(stringClass);
           }});
       </script>
+
+      
 </body>
 </html>

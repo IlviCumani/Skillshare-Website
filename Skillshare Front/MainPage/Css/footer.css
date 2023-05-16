@@ -13,15 +13,28 @@
   .footer p{
     margin-bottom: 0.5vh;
     color: #fff;
-
   }
 
-  .icons_width{
+  .icons{
     color: #8D86C9;
   }
 
-  .icons_width i:hover{
+  .icons i:hover{
     color: #397367;
     transition: 0.2s;
+  }
+
+  @media screen and (max-width: 800px) {
+    .icons{
+      width: 100%;
+      margin: auto;
+      text-align: center;
+    }
+
+    #rights{
+      width: 100%;
+      margin: auto;
+      text-align: center;
+    }
   }
   

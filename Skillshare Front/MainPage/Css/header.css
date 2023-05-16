@@ -92,10 +92,15 @@ header{
     transition: 0.5s;
 }
 
+/* .nav-list li a:hover{
+    color: #397367;
+    --_p: 100%
+} */
+
 .nav-list li:not(:last-child) a:hover{
     color: #397367;
     --_p: 100%
-}
+} 
 
 .nav-list li:last-child> a:hover{
     background-color: #5DA399;
@@ -128,6 +133,17 @@ nav button:active {
     display: flex;
 }
 
+/* #LoginBtn{
+    background-color: #397367;
+    color: #fff;
+    padding: 10px 30px;
+    border-radius: 5px;
+    margin: 0 10px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+} */
+
 @media (max-width: 800px){
     .header {
         align-items: baseline;
@@ -157,12 +173,21 @@ nav button:active {
         align-items: flex-end;
     }
 
+    .nav-list li{
+        margin: 10px 10px;
+    }
+
     .logo h1{
         color: #8D86C9;
         font-family: "Open Sans", sans-serif;
         font-size: 20px;
         margin: 0;
         padding: 0;
+    }
+
+    .logo{
+        display: flex;
+        align-self: self-start;
     }
 
     .logo img{

@@ -1,13 +1,13 @@
 .contact{
   background-color: #8D86C9;
-  width: 100%;
-  margin: auto;
   text-align: center;
-  padding-top: 15vh;
-  padding-bottom: 5vh;
+  padding: 50px;
 }
 .contact h1{
   font-weight: bold;
+  font-size: xx-large;
+  text-align: center;
+  margin-bottom: 30px;
   color: #fff;
 }
 
@@ -16,10 +16,12 @@
   padding-top: 2vh;
   color: #fff;
 }
+
 .contact div{
-  font-size: 5vh;
+  font-size: 40px;
   margin-top: 10vh;
 }
+
 .contact a{
   color: #397367;
 }

@@ -14,17 +14,16 @@
     <link rel="stylesheet" href="Css\scroll.css">
     <!-- <link rel="stylesheet" href="Css/modal.css"> -->
     <link rel="shortcut icon" type="image/x-icon" href="">
+    <link rel="icon" href="/MainPage/MainImg/favicon-removebg-preview.png">
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@700&display=swap" rel="stylesheet">
     
     <title>Skillshare360</title>
     <script src="https://kit.fontawesome.com/ad806ed620.js" crossorigin="anonymous"></script>
 </head>
-
-
 <body>
     <header id="header">
         <div class="logo">
-            <img src="MainImg/tempLogo.svg" alt="logo">
+            <img src="MainImg/favicon-removebg-preview.png" alt="logo">
             <h1>Skillshare360</h1>
         </div>
         <nav>
@@ -124,26 +123,7 @@
           <p id="rights">Skillshare360 © 2023.<br>All rights reserved.</p>
         </nav>
       </section>
-      <script>
-          const joinButtons = document.querySelectorAll('.JoinUs-btn');
-          const [menuButton] = document.getElementsByClassName('menu-button');
-          
-          joinButtons.forEach(button => {
-            button.addEventListener('click', () => {
-              window.location.href = '../RegisterPage/SignUpPage/signup.html';
-            });
-          });
-
-          menuButton.addEventListener('click', () => {
-          const menuLinks = document.querySelector('ul.nav-list');
-          toggleClass(menuLinks, 'show');
-         
-          function toggleClass(element, stringClass) {
-            if (element.classList.contains(stringClass))
-              element.classList.remove(stringClass);
-            else
-              element.classList.add(stringClass);
-          }});
-      </script>
+      <script src="/MainPage/Script/navig.js"></script>
+      <script src="/MainPage/Script/menu.js"></script>
 </body>
 </html>

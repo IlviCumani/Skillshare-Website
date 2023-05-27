@@ -11,7 +11,6 @@ const user = {
     phone: "069 123 4567",
     level: "Premium",
     password: "123456"
-    
 };
 
 username.innerHTML = user.name;

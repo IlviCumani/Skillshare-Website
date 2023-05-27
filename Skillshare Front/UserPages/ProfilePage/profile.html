@@ -7,8 +7,9 @@
     <link rel="icon" href="../../MainPage/MainImg/favicon-removebg-preview.png">
     <link rel="stylesheet" href="../../MainPage/Css/header.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-    <link rel="stylesheet" href="profile.css">
-    <link rel="stylesheet" href="courseCard.css">
+    <link rel="stylesheet" href="../Components/Card/courseCard.css">
+    <link rel="stylesheet" href="./Css/ongoing.css">
+    <link rel="stylesheet" href="./Css/profile.css">
     <title>Skillshare360</title>
     <script
         src="https://code.jquery.com/jquery-3.3.1.js"
@@ -18,7 +19,8 @@
     <script> 
         $(function(){
             $("#header").load("../Components/Header/header.html"); 
-            $("#footer").load("footer.html"); 
+            $("#footer").load("../Components/Footer/footer.html"); 
+            $(".course-card").load("../Components/Card/card.html");
         });
     </script> 
 </head>
@@ -43,26 +45,21 @@
             </div>
         </div>
     </section>
+
     <section id="activeCourses">
         <h1>On going courses</h1>
-        <div id="course">
-            <div id="course-img-container">
-                <img src="https://media.movieassets.com/static/images/items/people/profiles/500/100/adria-rae-a8e9d40adad0aaa181be43ca27d9e29e.jpg" alt="Avatar" class="course-Img">
-            </div>
-            <div id="course-info">
-                <h2 id="course-name"> efefefef</h2>
-                <h2 id="course-category">efefefefwefwf</h2>
-                <h2 id="course-price">3434443</h2>
-            </div>
-        </div>
-    </section>
-    <section id="finishedCourses">
-        <h1>Finished courses</h1>
-    </section>
-    <section id="myCourses">
-        <h1>My courses</h1>
-    </section>
-    
+
+        <div class=all-Courses>
+
+            <div class="course-card"></div>
+            <div class="course-card"></div>
+            <div class="course-card"></div>
+            <div class="course-card"></div>
+            <div class="course-card"></div>
+            <div class="course-card"></div>
+            <div class="course-card"></div>
+        </div> 
+    </section>   
     <div id="footer"></div>
     <script src="user.js"></script>
 </body>

@@ -44,7 +44,7 @@ body{
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     margin-top: 10px;
-
+    overflow: hidden;
 }
 
 h1, h2 {
@@ -82,6 +82,22 @@ h1, h2 {
     transform: scale(1.1);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     background-color: #5DA399;
+}
+
+@media (max-width: 780px) {
+    #profile-info-container {
+       margin: 100px 15px 25px 15px;
+    }
+
+    #profile-info-text {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        font-size: 12px;
+    }
+
+    #profile-info-buttons {
+        justify-content: center;
+    }
 }
 
 

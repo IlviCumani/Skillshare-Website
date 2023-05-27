@@ -1,0 +1,32 @@
+#activeCourses{
+    background-color: #fff;
+    margin: 0 70px;
+}
+
+#activeCourses h1{
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 500;
+    color: #8D86C9;
+}
+
+.all-Courses{
+    background-color: #fff;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 20px;
+}
+
+@media (max-width: 780px) {
+    #activeCourses{
+        justify-content: center;
+    }
+
+    .all-Courses{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}

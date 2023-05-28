@@ -1,9 +1,17 @@
-#activeCourses{
+.activeCourses{
     background-color: #fff;
-    margin: 0 70px;
+    margin: 10px 70px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-bottom: #8D86C9;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-#activeCourses h1{
+.activeCourses h1{
     margin: 0;
     padding: 10px;
     text-align: center;
@@ -19,8 +27,43 @@
     grid-gap: 20px;
 }
 
+#Mysourses-Top{
+    display: flex;
+    align-items: center;
+    margin: 0 70px;
+    justify-content: center;
+}
+
+#Mysourses-Top h1{
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 500;
+    color: #8D86C9;
+}
+
+#Mysourses-Top button{
+    margin-left: 10px;
+    color: #fff;
+    border-radius: 50%;
+    border: none;
+    background-color: #397367;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: bolder;
+    cursor: pointer;
+    justify-self: flex-end;
+}
+
+#Mysourses-Top button:hover{
+    color: #fff;
+    background-color: #5DA399;
+    transform: scale(1.1);
+}
+
 @media (max-width: 780px) {
-    #activeCourses{
+    .activeCourses{
         justify-content: center;
     }
 

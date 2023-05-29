@@ -59,7 +59,7 @@
                 
 
                 setTimeout(() => {
-
+                    
                     if(emailTF.value == "" && passwordTF.value == ""){
                         window.location.href = "../../UserPages/ProfilePage/profile.php";
                     }
@@ -72,7 +72,7 @@
             
             cancel.addEventListener('click', () => {
                 console.log("clicked");
-                window.location.href = "../../home.html";
+                window.location.href = "../../home.php";
             });
         </script>
 </body>

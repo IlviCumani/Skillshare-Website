@@ -34,7 +34,7 @@
                     <li><a href="#hero">Home</a></li>
                     <li><a href="#about-us">About</a></li>
                     <li><a href="#contact">Contact Us</a></li>
-                    <li><a href="./RegisterPage/LoginPage/login.html">Login</a></li>
+                    <li><a href="./RegisterPage/LoginPage/login.php">Login</a></li>
                 </ul>
         </nav>
     </header>

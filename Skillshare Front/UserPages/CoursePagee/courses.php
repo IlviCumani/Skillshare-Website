@@ -15,8 +15,8 @@
     </script>
     <script> 
         $(function(){
-            $("#header").load("../Components/Header/header.html"); 
-            $("#footer").load("footer.html"); 
+            $("#header").load("../Components/Header/header.php"); 
+            $("#footer").load("footer.php"); 
         });
     </script>
 </head>

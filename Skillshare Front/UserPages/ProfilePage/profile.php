@@ -20,9 +20,9 @@
     </script>
     <script> 
         $(function(){
-            $("#header").load("../Components/Header/header.html"); 
-            $("#footer").load("../Components/Footer/footer.html"); 
-            $(".course-card").load("../Components/Card/card.html");
+            $("#header").load("../Components/Header/header.php"); 
+            $("#footer").load("../Components/Footer/footer.php"); 
+            $(".course-card").load("../Components/Card/card.php");
         });
     </script> 
 </head>

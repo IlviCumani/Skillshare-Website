@@ -61,7 +61,7 @@
                 setTimeout(() => {
 
                     if(emailTF.value == "" && passwordTF.value == ""){
-                        window.location.href = "../../UserPages/ProfilePage/profile.html";
+                        window.location.href = "../../UserPages/ProfilePage/profile.php";
                     }
                     else{
                         loader.style.display = "none";

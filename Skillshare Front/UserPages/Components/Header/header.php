@@ -8,10 +8,10 @@
               <span>...</span>
             </button>
             <ul class="nav-list">
-                <li><a href="../ProfilePage/profile.html">My Page</a></li>
-                <li><a href="../CoursePagee/courses.html">Courses</a></li>
+                <li><a href="../ProfilePage/profile.php">My Page</a></li>
+                <li><a href="../CoursePagee/courses.php">Courses</a></li>
                 <li><a href="">Community</a></li>
-                <li><a href="./../../home.html">Log Out</a></li>
+                <li><a href="./../../home.php">Log Out</a></li>
             </ul>
     </nav>
     <script src="../../../Skillshare Front/MainPage/Script/menu.js"></script>

@@ -63,7 +63,7 @@
             <div class="user-level" id="Premium">
               <h2>Premium</h2>
                 <ol>
-                    <li>All Learner Beneffits</li>
+                    <li>All Learner Benefits</li>
                     <li>Access to exclusive courses</li>
                     <li>Create your own comunity to study with your friends</li>
                     <li>Recomandet courses based on your selection</li>

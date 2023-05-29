@@ -77,3 +77,38 @@
         </script>
 </body>
 </html>
+
+<!-- put this on top dhe fix it to the database for the page to work
+<?php
+// Connect to the MySQL database
+$servername = "localhost";
+$username = "your_username";
+$password = "your_password";
+$database = "your_database_name";
+
+$conn = new mysqli($servername, $username, $password, $database);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
+    $email = $_GET['email'];
+    $password = $_GET['password'];
+
+    // Prepare the SQL statement to check email and password
+    $sql = "SELECT * FROM users WHERE email = '$email' AND password = '$password'";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        // User credentials are correct, redirect to the profile page
+        header("Location: ../../UserPages/ProfilePage/profile.php");
+        exit();
+    } else {
+        // User credentials are incorrect
+        echo "<script>alert('Wrong username or password');</script>";
+    }
+}
+
+$conn->close();
+?> -->

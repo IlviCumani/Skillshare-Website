@@ -47,11 +47,13 @@
                 <img src="course1.png" alt="Course 1">
                 <h3>Course Title</h3>
                 <p>Course description goes here</p>
+                <button class="btn" id="but">Visit course</button>
             </div>
             <div class="course-card">
                 <img src="course2.png" alt="Course 2">
                 <h3>Course Title</h3>
                 <p>Course description goes here</p>
+                <button class="btn" id="but">Visit course</button>
             </div>
         </div>
     </section>
@@ -59,7 +61,7 @@
     <section class="hero-section">
         <h2>Visit all of our courses</h2>
         <div class="course-container">
-           <a href="all_courses_page.php"><button class="btn" id="but">Explore</button></a>
+           <a href="all_courses_page.php"><button class="btn" style="margin-top: -40px;">Explore</button></a>
         </div>
     </section>
 

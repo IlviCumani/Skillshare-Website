@@ -59,7 +59,7 @@
     <section class="hero-section">
         <h2>Visit all of our courses</h2>
         <div class="course-container">
-           <a href="all_courses_page.php"><button>Explore</button></a>
+           <a href="all_courses_page.php"><button class="btn" id="but">Explore</button></a>
         </div>
     </section>
 

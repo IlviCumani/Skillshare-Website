@@ -34,3 +34,7 @@
     opacity: 0;
     z-index: -1;
 }
+
+#but{
+    margin-top: 20px;
+}

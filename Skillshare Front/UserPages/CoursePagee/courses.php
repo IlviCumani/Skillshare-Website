@@ -56,6 +56,13 @@
         </div>
     </section>
 
+    <section class="hero-section">
+        <h2>Visit all of our courses</h2>
+        <div class="course-container">
+           <a href="all_courses_page.php"><button>Explore</button></a>
+        </div>
+    </section>
+
     <section class="footer">
         <nav class="icons_width">
           <div >

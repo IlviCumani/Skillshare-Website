@@ -13,7 +13,7 @@
     <div class="container">
         <div class="screen">
             <div class="screen__content">
-                <form class="login" method="get" action="">
+                <form class="login" method="post" action="validate.php">
                     <h1>SignUp</h1>
 
                     <div class="login__field">
@@ -33,12 +33,12 @@
 
                     <div class="login__field">
                         <span class="material-symbols-outlined login__icon">lock</span>
-                        <input type="password" name="password" id="password" class="login__input" required placeholder="Confirm Password">
+                        <input type="password" name="passwordConfirm" id="passwordConfirm" class="login__input" required placeholder="Confirm Password">
                     </div>
 
                     <div class="login__field" id="file_input">
                         <span class="material-symbols-outlined login__icon">upload</span>
-                        <input type="file" name="file" id="file" class="login__input" required placeholder="Upload CV">
+                        <input type="file" name="file" id="file" class="login__input" placeholder="Upload CV">
                     </div>
 
                     <div class="login__field" id="level">
@@ -49,7 +49,7 @@
                             <option value="3">Instructor</option>
                         </select>
                     </div>
-                    <button type="button" class="button login__submit">
+                    <button class="button login__submit" id="Sign_Up_Button">
                         <span class="button__text">SignUp Now</span>
                         <span class="material-symbols-outlined button__icon">arrow_forward_ios</span>
                         <div class="loader" id="loader"></div>
@@ -64,5 +64,12 @@
             </div>		
         </div>
     </div>
+    <!-- <script>
+        const button = document.getElementById("Sign_Up_Button");
+
+        button.addEventListener("click",()=>{
+            window.location.href = "../../UserPages/ProfilePage/profile.php";
+        })
+    </script> -->
 </body>
 </html>

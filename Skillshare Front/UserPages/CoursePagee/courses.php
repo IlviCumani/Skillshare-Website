@@ -29,7 +29,7 @@
     <section id="header"></section>
     <section class="hero-section">
         <div class="hero-content">
-            <h1>Moto e grupit</h1>
+            <h1>Courses Page</h1>
             <p>Explore thousands of courses in various categories</p>
             <div class="box">
                 <form name="search">

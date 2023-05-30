@@ -91,7 +91,7 @@
     </section>
 
 
-    <div id="footer"></div>
+    <section id="footer"></section>
     <script src="user.js"></script>
 </body>
 </html>

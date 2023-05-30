@@ -1,0 +1,115 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    background-color: #f1f1f1;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+/* Hero section styles */
+.hero-section {
+    background-color: #f9f9f9;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+/* Course section styles */
+.course-section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.course-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.course-card {
+    flex-basis: 300px;
+    background-color: #fff;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.course-card img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.course-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.course-card p {
+    font-size: 16px;
+    color: #777;
+}
+
+/* Footer styles */
+.footer{
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    padding-top: 4vh;
+    padding-bottom: 1.5vh;
+    background: #414145;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    font-size: 2vh;
+  }
+  .footer p{
+    margin-bottom: 0.5vh;
+    color: #fff;
+  }
+
+  .icons{
+    color: #8D86C9;
+    display: inline-block;
+    margin: 1%;
+    font-size: 2.5vh;
+  }
+
+  .icons i:hover{
+    color: #397367;
+    font-size: 7vh;
+    transition: 0.2s;
+  }

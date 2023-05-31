@@ -42,11 +42,11 @@
                     </div>
 
                     <div class="login__field" id="level">
-                        <select class="login__submit">
+                        <select class="login__submit" name="type">
                             <option value="0">Select Level</option>
-                            <option value="1">Learner</option>
-                            <option value="2">Premium</option>
-                            <option value="3">Instructor</option>
+                            <option value="Learner">Learner</option>
+                            <option value="Premium">Premium</option>
+                            <option value="Instructor">Instructor</option>
                         </select>
                     </div>
                     <button class="button login__submit" id="Sign_Up_Button">

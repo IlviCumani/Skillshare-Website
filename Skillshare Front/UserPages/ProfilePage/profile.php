@@ -35,7 +35,7 @@
                     <img src="https://media.movieassets.com/static/images/items/people/profiles/500/100/adria-rae-a8e9d40adad0aaa181be43ca27d9e29e.jpg" alt="Avatar" class="avatar">
                 </div>
                 <div id="profile-info-text">
-                    <h2 id="username"> </h2>
+                    <h2 id="username">Erli</h2>
                     <h2 id="email"></h2>
                     <h2 id="phone"></h2>
                     <h2 id="level"></h2>
@@ -76,7 +76,7 @@
 
         <div id="Mysourses-Top">
             <h1>My courses</h1>
-             <button id="createCourse">
+             <button id="createCourse" onclick = "window.location.href = '../CoursePagee/courseForm/courseForm.php';">
                 <span class="material-symbols-outlined">
                     add_circle
                  </span>
@@ -90,8 +90,8 @@
         </div>
     </section>
 
+     <section id="footer"></section>
+    <script src="logedUser.js"></script>
 
-    <div id="footer"></div>
-    <script src="user.js"></script>
 </body>
 </html>

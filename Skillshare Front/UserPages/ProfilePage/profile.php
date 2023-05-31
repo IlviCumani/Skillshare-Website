@@ -76,7 +76,7 @@
 
         <div id="Mysourses-Top">
             <h1>My courses</h1>
-             <button id="createCourse">
+             <button id="createCourse" onclick = "window.location.href = '../CoursePagee/courseForm/courseForm.php';">
                 <span class="material-symbols-outlined">
                     add_circle
                  </span>

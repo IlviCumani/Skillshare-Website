@@ -1,3 +1,9 @@
+<?php
+
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,6 +21,12 @@
             <div class="screen__content">
                 <form class="login" method="post" action="validate.php">
                     <h1>SignUp</h1>
+                    <?php
+                    if(isset($_SESSION['user_login'])){
+                    echo "<p style=\"color: Red;\">".$_SESSION['user_login']."</p>";
+                    
+                    }
+                    ?>
                     <div class="login__field">
                         <span class="material-symbols-outlined login__icon">person</span>
                         <input type="text" name="username" id="username" class="login__input" required placeholder="Username">

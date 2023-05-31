@@ -90,8 +90,8 @@
         </div>
     </section>
 
-
-    <div id="footer"></div>
+     <section id="footer"></section>
     <script src="logedUser.js"></script>
+
 </body>
 </html>

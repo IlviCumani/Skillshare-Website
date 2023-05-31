@@ -52,7 +52,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="container">
         <div class="screen">
             <div class="screen__content">
-                <form class="login" method="post" action="">
+                <form class="login" method="post" action="validate.php">
+
                     <h1>SignUp</h1>
 
                     <div class="login__field">
@@ -76,23 +77,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                     <div class="login__field">
                         <span class="material-symbols-outlined login__icon">lock</span>
-                        <input type="password" name="confirm_password" id="confirm_password" class="login__input" required placeholder="Confirm Password">
+
+                        <input type="password" name="passwordConfirm" id="passwordConfirm" class="login__input" required placeholder="Confirm Password">
+
                     </div>
 
                     <div class="login__field" id="file_input">
                         <span class="material-symbols-outlined login__icon">upload</span>
-                        <input type="file" name="file" id="file" class="login__input" required placeholder="Upload CV">
+                        <input type="file" name="file" id="file" class="login__input" placeholder="Upload CV">
                     </div>
 
                     <div class="login__field" id="level">
-                        <select class="login__submit" name="level">
+
+                        <select class="login__submit" name="type">
                             <option value="0">Select Level</option>
-                            <option value="1">Learner</option>
-                            <option value="2">Premium</option>
-                            <option value="3">Instructor</option>
+                            <option value="Learner">Learner</option>
+                            <option value="Premium">Premium</option>
+                            <option value="Instructor">Instructor</option>
                         </select>
                     </div>
-                    <button type="submit" class="button login__submit">
+
+                    <button class="button login__submit" id="Sign_Up_Button">
+
                         <span class="button__text">SignUp Now</span>
                         <span class="material-symbols-outlined button__icon">arrow_forward_ios</span>
                         <div class="loader" id="loader"></div>
@@ -118,5 +124,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>		
         </div>
     </div>
+    <!-- <script>
+        const button = document.getElementById("Sign_Up_Button");
+
+        button.addEventListener("click",()=>{
+            window.location.href = "../../UserPages/ProfilePage/profile.php";
+        })
+    </script> -->
 </body>
 </html>

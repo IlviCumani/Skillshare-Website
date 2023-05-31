@@ -47,26 +47,53 @@
         </div>
         
         <script>
+            const user = {
+                name: "Ilvi",
+                surname: "Cumani",
+                token: "1234567890"
+            }
             const cancel = document.querySelector('.cancel__submit');
             const login = document.querySelector('.login__submit');
             const loader = document.getElementById('loader');
             const emailTF = document.getElementById('emailTF');
             const passwordTF = document.getElementById('passwordTF');
             const right_arrow = document.getElementById('right_arrow');
-
+            
             login.addEventListener('click', () => {
                 loader.style.display = "block";
                 
 
                 setTimeout(() => {
                     
-                    if(emailTF.value == "" && passwordTF.value == ""){
+                    if(emailTF.value == "ilvi" && passwordTF.value == "1234"){
+                        // Convert object to a string
+                        const loggedUser = JSON.stringify(user);
+
+                        // Store the string representation in local storage
+                        localStorage.setItem("user", loggedUser);
+                        localStorage.setItem("token", JSON.stringify(user.token));
                         window.location.href = "../../UserPages/ProfilePage/profile.php";
                     }
+
                     else{
                         loader.style.display = "none";
                         alert("Wrong username or password");
                     }
+
+                    // if(){
+                    //     // Convert object to a string
+                    //     const loggedUser = JSON.stringify(user);
+
+                    //     // Store the string representation in local storage
+                    //     localStorage.setItem("user", loggedUser);
+                    //     localStorage.setItem("token", JSON.stringify(user.token));
+                    //     window.location.href = "../../UserPages/ProfilePage/profile.php";
+                    // }
+
+                    // else{
+                    //     loader.style.display = "none";
+                    //     alert("Wrong username or password");
+                    // }
                 }, 1000);
             });;
             

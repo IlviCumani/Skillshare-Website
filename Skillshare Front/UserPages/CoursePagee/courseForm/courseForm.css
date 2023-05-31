@@ -104,11 +104,12 @@ body {
 
 /* style the items (options), including the selected item: */
 .select-items div,.select-selected {
-  color: #ffffff;
+  color: #f7f7f7;
   padding: 8px 16px;
   border: 1px solid transparent;
   border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
   cursor: pointer;
+  
 }
 
   /* Style items (options): */
@@ -120,8 +121,34 @@ body {
   right: 0;
   z-index: 99;
   border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  /* border-bottom-right-radius: 20px; */
+  max-height: 149px;
+  overflow-y: auto;
+  
 }
+
+::webkit-skrollbar{
+  width: 10px;
+}
+
+::-webkit-scrollbar-track{
+  background-color: #776BCC;
+  /* border-radius: 10px; */
+}
+
+::-webkit-scrollbar{
+  width: 10px;
+  background-color: #776BCC;
+  /* border-radius: 10px; */
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: #5DA399;
+  /* border-radius: 10px; */
+}
+
+  /* Hide the items when the select box is closed: */
+
 
 /* Hide the items when the select box is closed: */
 .select-hide {
@@ -203,4 +230,8 @@ input[type="file"]::file-selector-button:hover{
   margin-right: 20px;
   margin-bottom: 10px;
 	color: #776BCC;
+}
+
+@media screen {
+    
 }

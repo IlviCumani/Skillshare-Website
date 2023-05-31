@@ -35,7 +35,7 @@
                     <img src="https://media.movieassets.com/static/images/items/people/profiles/500/100/adria-rae-a8e9d40adad0aaa181be43ca27d9e29e.jpg" alt="Avatar" class="avatar">
                 </div>
                 <div id="profile-info-text">
-                    <h2 id="username"> </h2>
+                    <h2 id="username">Erli</h2>
                     <h2 id="email"></h2>
                     <h2 id="phone"></h2>
                     <h2 id="level"></h2>
@@ -92,6 +92,6 @@
 
 
     <div id="footer"></div>
-    <script src="user.js"></script>
+    <script src="logedUser.js"></script>
 </body>
 </html>

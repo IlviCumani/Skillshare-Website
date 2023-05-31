@@ -5,24 +5,14 @@ const level = document.getElementById("level");
 const editBtn = document.getElementById("edit-profile-button");
 const changePassBtn = document.getElementById("change-password-button");
 
-const user = {
-    name: "Ilvio Cumani",
-    email: "icumani21@epoka.edu.al",
-    phone: "069 123 4567",
-    level: "Premium",
-    password: "123456"
-};
+const userString = localStorage.getItem('user');
+const user = JSON.parse(userString);
 
-username.innerHTML = user.name;
-email.innerHTML = user.email;
-phone.innerHTML = user.phone;
-level.innerHTML = user.level;
-
-editBtn.addEventListener("click", () => {
-    user.name = prompt("Enter your new name: ");
-    user.email = prompt("Enter your new email: ");
-    user.phone = prompt("Enter your new phone number: ");
-});
+// username.innerHTML = user['name'];
+// email.innerHTML = user['email'];
+// phone.innerHTML = user['phone'];
+// level.innerHTML = user['level'];
+username.innerHTML = "John Doe";
 
 /*
 const username = document.getElementById("username");

@@ -48,8 +48,10 @@
         
         <script>
             const user = {
-                name: "Ilvi",
-                surname: "Cumani",
+                name: "Joan Gjergo",
+                phone: "067 585 1510",
+                email: "icumani21@epoka.edu.al",
+                level: "Instruktor",
                 token: "1234567890"
             }
             const cancel = document.querySelector('.cancel__submit');

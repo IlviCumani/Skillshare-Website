@@ -121,10 +121,34 @@ body {
   right: 0;
   z-index: 99;
   border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  max-height: 150px;
+  /* border-bottom-right-radius: 20px; */
+  max-height: 149px;
   overflow-y: auto;
+  
 }
+
+::webkit-skrollbar{
+  width: 10px;
+}
+
+::-webkit-scrollbar-track{
+  background-color: #776BCC;
+  /* border-radius: 10px; */
+}
+
+::-webkit-scrollbar{
+  width: 10px;
+  background-color: #776BCC;
+  /* border-radius: 10px; */
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: #5DA399;
+  /* border-radius: 10px; */
+}
+
+  /* Hide the items when the select box is closed: */
+
 
 /* Hide the items when the select box is closed: */
 .select-hide {

@@ -94,20 +94,3 @@ body {
     color: #777;
 }
 
-/* Footer styles */
-.footer{
-    width: 100%;
-    margin: auto;
-    text-align: center;
-    padding-top: 4vh;
-    padding-bottom: 1.5vh;
-    background: #414145;
-    background-position: center;
-    background-size: cover;
-    position: relative;
-    font-size: 2vh;
-  }
-  .footer p{
-    margin-bottom: 0.5vh;
-    color: #fff;
-  }

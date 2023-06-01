@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../../MainPage/MainImg/favicon-removebg-preview.png">
     <link rel="stylesheet" href="../../MainPage/Css/header.css">
+    <link rel="stylesheet" href="../../MainPage/Css/footer.css">
     <link rel="stylesheet" href="course.css">
-    <link rel="stylesheet" href="searchBar.css"> 
-    <link rel="stylesheet" href="all_courses.css"> 
+    <link rel="stylesheet" href="searchBar.css">
+    <link rel="stylesheet" href="all_courses.css">
     <title>Skillshare360 Courses Page</title>
     <script src="all_courses_page.js"></script>
     <script
@@ -20,16 +21,16 @@
     <link rel="icon" href="./MainPage/MainImg/favicon-removebg-preview.png">
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/ad806ed620.js" crossorigin="anonymous"></script>
-    <script> 
+    <script>
         $(function(){
-            $("#header").load("../Components/Header/header.php"); 
-            $("#footer").load("footer.php"); 
+            $("#header").load("../Components/Header/header.php");
+            $("#footer").load("footer.php");
         });
     </script>
 </head>
 <body>
     <section id="header"></section>
-    <section id="filter_bar">
+    <!-- <section id="filter_bar">
         <div id="myBtnContainer">
             <button class="filter active" onclick="filterSelection('all')"> Show all</button>
             <button class="filter" onclick="filterSelection('programming')"> Programming</button>
@@ -51,7 +52,7 @@
             <button class="filter" onclick="filterSelection('history')"> History</button>
             <button class="filter" onclick="filterSelection('geo')"> Geography</button>
         </div>
-    </section>
+    </section> -->
     <section class="course-section">
         <div class="course-container">
             <div class="course-card">
@@ -155,10 +156,10 @@
 
     <section class="footer">
         <nav class="icons_width">
-          <div >
-            <a class="icons"><i class="fab fa-facebook-square fa-2x"></i></a>
-            <a class="icons"><i class="fab fa-instagram fa-2x"></i></a>
-            <a class="icons"><i class="fas fa-envelope fa-2x"></i></a>
+          <div class="icons">
+            <a><i class="fab fa-facebook-square fa-2x"></i></a>
+            <a><i class="fab fa-instagram fa-2x"></i></a>
+            <a><i class="fas fa-envelope fa-2x"></i></a>
           </div>
           <p id="rights">Skillshare360 © 2023.<br>All rights reserved.</p>
         </nav>

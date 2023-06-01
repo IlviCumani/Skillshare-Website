@@ -52,7 +52,7 @@ session_start();
                         <input type="file" name="file" id="file" class="login__input" placeholder="Upload CV">
                     </div>
                     <div class="login__field" id="level">
-                        <select class="login__submit" name="type">
+                        <select class="login__submit" name="type" id="level">
                             <option value="0">Select Level</option>
                             <option value="Learner">Learner</option>
                             <option value="Premium">Premium</option>
@@ -84,12 +84,19 @@ session_start();
             </div>		
         </div>
     </div>
-    <!-- <script>
-        const button = document.getElementById("Sign_Up_Button");
-
-        button.addEventListener("click",()=>{
-            window.location.href = "../../UserPages/ProfilePage/profile.php";
-        })
-    </script> -->
+    <script>
+        const level =document.getElementById('level');
+        const file =document.getElementById('file_input');
+        console.log(file);
+        
+        level.addEventListener('change', function(event){
+            console.log(event.target.value);
+            if(event.target.value == "Instructor"){
+                file.classList.add("show")
+            }else{
+                file.classList.remove("show");
+            }
+        });
+    </script>
 </body>
 </html>

@@ -20,36 +20,36 @@
                     <form action="" method="">
                         <div id="form-input-grid">
                             <div class="inp-div">
-                                <input type="text" id="TitleTF" class="formInputs" placeholder="Course title">
+                                <input type="text" name="coursetitle" id="TitleTF" class="formInputs" placeholder="Course title">
                                 <span class="material-symbols-outlined icon">match_case</span>
                             </div>
 
                             <div class="inp-div">
-                                <input type="description" id="DescriptionTF" class="formInputs" placeholder="Course description">
+                                <input type="description" name="coursedescription" id="DescriptionTF" class="formInputs" placeholder="Course description">
                                 <span class="material-symbols-outlined icon">description</span>
                             </div>
                             
                             <div class="inp-div">
-                                <input type="url" id="UrlTF" class="formInputs" placeholder="Image Url">
+                                <input type="url" id="UrlTF" name="imgurl" class="formInputs" placeholder="Image Url">
                                 <span class="material-symbols-outlined icon">photo_camera</span>
                             </div>
 
                             <div class="inp-div">
-                                <input type="number" id="PriceTF" class="formInputs" placeholder="Price" min="0">
+                                <input type="number" id="PriceTF" name="courseprice" class="formInputs" placeholder="Price" min="0">
                                 <span class="material-symbols-outlined icon">attach_money</span>
                             </div>
 
                             <div  id="special-fuccking-kid">
-                                <input type="file" id="FileTF" class="formInputs" placeholder="Certificate">
+                                <input type="file" id="FileTF" name="coursecertificate" class="formInputs" placeholder="Certificate">
                                 <span class="material-symbols-outlined icon">upload</span>
                             </div>
                             
                             <div class="inp-div">
-                                <input type="date" name="dateTf" id="dateTf" class="formInputs">
+                                <input type="date" name="coursedatecreated" id="dateTf" class="formInputs">
                             </div>
                             
                             
-                            <div class="custom-select" style="width:200px;">
+                            <div class="custom-select" name="coursetype" style="width:200px;">
                                 <select>
                                     <option value="0">Select Type</option>
                                     <option value="1">Programming</option>

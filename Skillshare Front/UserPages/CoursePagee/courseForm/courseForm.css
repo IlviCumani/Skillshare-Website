@@ -232,6 +232,41 @@ input[type="file"]::file-selector-button:hover{
 	color: #776BCC;
 }
 
-@media screen {
-    
+@media (max-width: 780px){
+    #form-input-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .action-btn{
+      width: 60%;
+    }
+
+    #special-fuccking-kid{
+      width: 70%;
+      justify-self: center;
+    }
+
+    #form-container{
+      height: fit-content;
+      border-radius: 0px;
+      width: fit-content;
+    }
+
+    .inp-div{
+      width: 70%;
+      justify-self: center;
+    }
+
+    .custom-select{
+      width: 70%;
+      justify-self: center;
+    }
+
+    .formInputs{
+      font-size: 15px;
+    }
+
+    input[type="file"]::file-selector-button{
+      width: 60%;
+    }
 }

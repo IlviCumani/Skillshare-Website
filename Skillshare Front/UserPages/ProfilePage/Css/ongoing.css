@@ -12,7 +12,7 @@
 }
 
 .activeCourses h1{
-    margin: 0;
+    margin-bottom: 40px;
     padding: 10px;
     text-align: center;
     font-size: 2rem;
@@ -30,12 +30,11 @@
 #Mysourses-Top{
     display: flex;
     align-items: center;
-    margin: 0 70px;
     justify-content: center;
+    margin-bottom: 40px;
 }
 
 #Mysourses-Top h1{
-    margin: 0;
     padding: 10px;
     text-align: center;
     font-size: 2rem;
@@ -60,6 +59,10 @@
     color: #fff;
     background-color: #5DA399;
     transform: scale(1.1);
+}
+
+#mycourses{
+    display: none;
 }
 
 @media (max-width: 780px) {

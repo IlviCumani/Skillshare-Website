@@ -44,6 +44,7 @@ session_start();
                     <h2 id="email"><?php if(isset($_SESSION['email'])){echo $_SESSION['email'];} ?></h2>
                     <h2 id="phone"><?php if(isset($_SESSION['phone'])){echo $_SESSION['phone'];} ?></h2>
                     <h2 id="level"><?php if(isset($_SESSION['type'])){echo $_SESSION['type'];} ?></h2>
+                    <!-- <h2 id="level">Instructor</h2> -->
                 </div>
             </div>
             <div id="profile-info-buttons">
@@ -95,8 +96,18 @@ session_start();
         </div>
     </section>
 
-     <section id="footer"></section>
-    <script src="logedUser.js"></script>
+    <section id="footer"></section>
+    <!-- <script src="logedUser.js"></script> -->
+    <script>
+        const mycourses = document.getElementById("mycourses");
+        const level = document.getElementById("level");
 
+        if(level.innerHTML == "Instructor"){
+            mycourses.style.display = "block";
+        }
+        else{
+            mycourses.style.display = "none";
+        }
+    </script>
 </body>
 </html>

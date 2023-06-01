@@ -1,3 +1,8 @@
+<?php
+
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -17,7 +22,7 @@
                 <h1>Course Form</h1>
 
                 <div id="form-div">
-                    <form action="" method="">
+                    <form method="post" action="CourseFormValidate.php" >
                         <div id="form-input-grid">
                             <div class="inp-div">
                                 <input type="text" name="coursetitle" id="TitleTF" class="formInputs" placeholder="Course title">
@@ -25,7 +30,7 @@
                             </div>
 
                             <div class="inp-div">
-                                <input type="description" name="coursedescription" id="DescriptionTF" class="formInputs" placeholder="Course description">
+                                <input type="text" name="coursedescription" id="DescriptionTF" class="formInputs" placeholder="Course description">
                                 <span class="material-symbols-outlined icon">description</span>
                             </div>
                             
@@ -50,7 +55,7 @@
                             
                             
                             <div class="custom-select" name="coursetype" style="width:200px;">
-                                <select>
+                                <select name="coursetag">
                                     <option value="0">Select Type</option>
                                     <option value="1">Programming</option>
                                     <option value="2">Dancing</option>

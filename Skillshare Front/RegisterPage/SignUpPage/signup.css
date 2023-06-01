@@ -181,6 +181,14 @@ h1{
     animation: spin 2s linear infinite;
     display: none;
   }
+
+  #file_input{
+		display: none;
+  }
+
+  #file_input.show{
+	display: block;
+  }
   
   /* Safari */
   @-webkit-keyframes spin {

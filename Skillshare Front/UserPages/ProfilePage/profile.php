@@ -95,8 +95,8 @@ session_start();
         </div>
     </section>
 
-     <section id="footer"></section>
-    <script src="logedUser.js"></script>
+    <section id="footer"></section>
+    <!-- <script src="logedUser.js"></script> -->
 
 </body>
 </html>

@@ -1,3 +1,8 @@
+<?php
+
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,10 +40,11 @@
                     <img src="https://media.movieassets.com/static/images/items/people/profiles/500/100/adria-rae-a8e9d40adad0aaa181be43ca27d9e29e.jpg" alt="Avatar" class="avatar">
                 </div>
                 <div id="profile-info-text">
-                    <h2 id="username"> </h2>
-                    <h2 id="email"></h2>
-                    <h2 id="phone"></h2>
-                    <h2 id="level"></h2>
+                    <h2 id="username"><?php if(isset($_SESSION['username'])){echo $_SESSION['username'];} ?></h2>
+                    <h2 id="email"><?php if(isset($_SESSION['email'])){echo $_SESSION['email'];} ?></h2>
+                    <h2 id="phone"><?php if(isset($_SESSION['phone'])){echo $_SESSION['phone'];} ?></h2>
+                    <h2 id="level"><?php if(isset($_SESSION['type'])){echo $_SESSION['type'];} ?></h2>
+                    <!-- <h2 id="level">Instructor</h2> -->
                 </div>
             </div>
             <div id="profile-info-buttons">
@@ -76,7 +82,7 @@
 
         <div id="Mysourses-Top">
             <h1>My courses</h1>
-             <button id="createCourse">
+             <button id="createCourse" onclick = "window.location.href = '../CoursePagee/courseForm/courseForm.php';">
                 <span class="material-symbols-outlined">
                     add_circle
                  </span>
@@ -90,8 +96,18 @@
         </div>
     </section>
 
-
     <section id="footer"></section>
-    <script src="user.js"></script>
+    <!-- <script src="logedUser.js"></script> -->
+    <script>
+        const mycourses = document.getElementById("mycourses");
+        const level = document.getElementById("level");
+
+        if(level.innerHTML == "Instructor"){
+            mycourses.style.display = "block";
+        }
+        else{
+            mycourses.style.display = "none";
+        }
+    </script>
 </body>
 </html>

@@ -47,26 +47,55 @@
         </div>
         
         <script>
+            const user = {
+                name: "Joan Gjergo",
+                phone: "067 585 1510",
+                email: "icumani21@epoka.edu.al",
+                level: "Instruktor",
+                token: "1234567890"
+            }
             const cancel = document.querySelector('.cancel__submit');
             const login = document.querySelector('.login__submit');
             const loader = document.getElementById('loader');
             const emailTF = document.getElementById('emailTF');
             const passwordTF = document.getElementById('passwordTF');
             const right_arrow = document.getElementById('right_arrow');
-
+            
             login.addEventListener('click', () => {
                 loader.style.display = "block";
                 
 
                 setTimeout(() => {
                     
-                    if(emailTF.value == "" && passwordTF.value == ""){
+                    if(emailTF.value == "ilvi" && passwordTF.value == "1234"){
+                        // Convert object to a string
+                        const loggedUser = JSON.stringify(user);
+
+                        // Store the string representation in local storage
+                        localStorage.setItem("user", loggedUser);
+                        localStorage.setItem("token", JSON.stringify(user.token));
                         window.location.href = "../../UserPages/ProfilePage/profile.php";
                     }
+
                     else{
                         loader.style.display = "none";
                         alert("Wrong username or password");
                     }
+
+                    // if(){
+                    //     // Convert object to a string
+                    //     const loggedUser = JSON.stringify(user);
+
+                    //     // Store the string representation in local storage
+                    //     localStorage.setItem("user", loggedUser);
+                    //     localStorage.setItem("token", JSON.stringify(user.token));
+                    //     window.location.href = "../../UserPages/ProfilePage/profile.php";
+                    // }
+
+                    // else{
+                    //     loader.style.display = "none";
+                    //     alert("Wrong username or password");
+                    // }
                 }, 1000);
             });;
             
@@ -77,3 +106,38 @@
         </script>
 </body>
 </html>
+
+<!-- put this on top dhe fix it to the database for the page to work
+<?php
+// Connect to the MySQL database
+$servername = "localhost";
+$username = "your_username";
+$password = "your_password";
+$database = "your_database_name";
+
+$conn = new mysqli($servername, $username, $password, $database);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
+    $email = $_GET['email'];
+    $password = $_GET['password'];
+
+    // Prepare the SQL statement to check email and password
+    $sql = "SELECT * FROM users WHERE email = '$email' AND password = '$password'";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        // User credentials are correct, redirect to the profile page
+        header("Location: ../../UserPages/ProfilePage/profile.php");
+        exit();
+    } else {
+        // User credentials are incorrect
+        echo "<script>alert('Wrong username or password');</script>";
+    }
+}
+
+$conn->close();
+?> -->

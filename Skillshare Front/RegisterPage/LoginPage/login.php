@@ -13,20 +13,20 @@
         <div class="container">
             <div class="screen">
                 <div class="screen__content">
-                    <form class="login" method="get" action="">
+                    <form class="login" method="post" action="LoginValidate.php">
                         <h1>Login</h1>
 
                         <div class="login__field">
                             <i class="login__icon fas fa-user"></i>
-                            <input type="text" class="login__input" id="emailTF" placeholder="User name / Email">
+                            <input type="text" name="email" class="login__input" id="emailTF" placeholder="User name / Email">
                         </div>
 
                         <div class="login__field">
                             <i class="login__icon fas fa-lock"></i>
-                            <input type="password" class="login__input" id="passwordTF" placeholder="Password">
+                            <input type="password" name="password" class="login__input" id="passwordTF" placeholder="Password">
                         </div>
 
-                        <button type="button" class="button login__submit">
+                        <button type="submit" class="button login__submit">
                             <span class="button__text">Log In Now</span>
                             <i class="button__icon fas fa-chevron-right" id="right_arrow"></i>
                             <div class="loader" id="loader"></div>
@@ -55,49 +55,49 @@
                 token: "1234567890"
             }
             const cancel = document.querySelector('.cancel__submit');
-            const login = document.querySelector('.login__submit');
+            //const login = document.querySelector('.login__submit');
             const loader = document.getElementById('loader');
             const emailTF = document.getElementById('emailTF');
             const passwordTF = document.getElementById('passwordTF');
             const right_arrow = document.getElementById('right_arrow');
             
-            login.addEventListener('click', () => {
-                loader.style.display = "block";
+            // login.addEventListener('click', () => {
+            //     loader.style.display = "block";
                 
 
-                setTimeout(() => {
+            //     setTimeout(() => {
                     
-                    if(emailTF.value == "ilvi" && passwordTF.value == "1234"){
-                        // Convert object to a string
-                        const loggedUser = JSON.stringify(user);
+            //         if(emailTF.value == "ilvi" && passwordTF.value == "1234"){
+            //             // Convert object to a string
+            //             const loggedUser = JSON.stringify(user);
 
-                        // Store the string representation in local storage
-                        localStorage.setItem("user", loggedUser);
-                        localStorage.setItem("token", JSON.stringify(user.token));
-                        window.location.href = "../../UserPages/ProfilePage/profile.php";
-                    }
+            //             // Store the string representation in local storage
+            //             localStorage.setItem("user", loggedUser);
+            //             localStorage.setItem("token", JSON.stringify(user.token));
+            //             window.location.href = "../../UserPages/ProfilePage/profile.php";
+            //         }
 
-                    else{
-                        loader.style.display = "none";
-                        alert("Wrong username or password");
-                    }
+            //         else{
+            //             loader.style.display = "none";
+            //             alert("Wrong username or password");
+            //         }
 
-                    // if(){
-                    //     // Convert object to a string
-                    //     const loggedUser = JSON.stringify(user);
+            //         // if(){
+            //         //     // Convert object to a string
+            //         //     const loggedUser = JSON.stringify(user);
 
-                    //     // Store the string representation in local storage
-                    //     localStorage.setItem("user", loggedUser);
-                    //     localStorage.setItem("token", JSON.stringify(user.token));
-                    //     window.location.href = "../../UserPages/ProfilePage/profile.php";
-                    // }
+            //         //     // Store the string representation in local storage
+            //         //     localStorage.setItem("user", loggedUser);
+            //         //     localStorage.setItem("token", JSON.stringify(user.token));
+            //         //     window.location.href = "../../UserPages/ProfilePage/profile.php";
+            //         // }
 
-                    // else{
-                    //     loader.style.display = "none";
-                    //     alert("Wrong username or password");
-                    // }
-                }, 1000);
-            });;
+            //         // else{
+            //         //     loader.style.display = "none";
+            //         //     alert("Wrong username or password");
+            //         // }
+            //     }, 1000);
+            // });;
             
             cancel.addEventListener('click', () => {
                 console.log("clicked");

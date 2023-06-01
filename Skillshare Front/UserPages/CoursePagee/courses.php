@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../../MainPage/MainImg/favicon-removebg-preview.png">
     <link rel="stylesheet" href="../../MainPage/Css/header.css">
+    <link rel="stylesheet" href="../../MainPage/Css/footer.css">
     <link rel="stylesheet" href="course.css">
     <link rel="stylesheet" href="searchBar.css"> 
     <title>Skillshare360 Courses Page</title>

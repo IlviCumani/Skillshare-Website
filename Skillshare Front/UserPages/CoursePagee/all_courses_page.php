@@ -29,7 +29,7 @@
 </head>
 <body>
     <section id="header"></section>
-    <section id="filter_bar">
+    <!-- <section id="filter_bar">
         <div id="myBtnContainer">
             <button class="filter active" onclick="filterSelection('all')"> Show all</button>
             <button class="filter" onclick="filterSelection('programming')"> Programming</button>
@@ -51,7 +51,7 @@
             <button class="filter" onclick="filterSelection('history')"> History</button>
             <button class="filter" onclick="filterSelection('geo')"> Geography</button>
         </div>
-    </section>
+    </section> -->
     <section class="course-section">
         <div class="course-container">
             <div class="course-card">

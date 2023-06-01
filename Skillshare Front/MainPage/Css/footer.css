@@ -18,14 +18,14 @@
   .icons{
     color: #8D86C9;
     display: inline-block;
-    margin: 1%;
+    margin: 5%;
     font-size: 2.5vh;
   }
 
   .icons a:hover{
     color: #397367;
-    font-size: 7vh;
-    transition: 0.2s;
+    font-size: 3vh;
+    transition: 0.1s;
   }
   
   @media screen and (max-width: 800px) {

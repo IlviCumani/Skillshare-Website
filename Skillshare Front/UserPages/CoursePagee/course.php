@@ -46,20 +46,20 @@ class Course
     // private $new_course; // array
 
     
-    private function checkFieldValues(){
-        if(empty($this->CourseName) || empty($this->Description)){
-            $this->error = "Both fields are required.";
-            return false;
-         }else{
-            return true;
-         }
-    } // Checking for empty fields.
+    // private function checkFieldValues(){
+    //     if(empty($this->CourseName) || empty($this->Description)){
+    //         $this->error = "Both fields are required.";
+    //         return false;
+    //      }else{
+    //         return true;
+    //      }
+    // } // Checking for empty fields.
 
-    private function insertCourse(){
-        $this->stored_courses[] = $this->new_course;
-        file_put_contents($this->storage, json_encode($this->stored_courses));
-        $this->success = "Course added successfully";
-     }
+    // private function insertCourse(){
+    //     $this->stored_courses[] = $this->new_course;
+    //     file_put_contents($this->storage, json_encode($this->stored_courses));
+    //     $this->success = "Course added successfully";
+    //  }
     
 
 

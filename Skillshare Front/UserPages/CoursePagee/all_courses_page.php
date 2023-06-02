@@ -1,3 +1,7 @@
+<?php 
+require 'show_all_courses.php';
+//session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,105 +59,16 @@
     </section> -->
     <section class="course-section">
         <div class="course-container">
-            <div class="course-card">
-                <img src="course1.png" alt="Course 1">
-                <h3>Course Title</h3>
-                <p>Course description goes here</p>
-                <button class="btn" id="but">Visit course</button>
-            </div>
-            <div class="course-card">
-                <img src="course2.png" alt="Course 2">
-                <h3>Course Title</h3>
-                <p>Course description goes here</p>
-                <button class="btn" id="but">Visit course</button>
-            </div>
-            <div class="course-card">
-                <img src="course2.png" alt="Course 2">
-                <h3>Course Title</h3>
-                <p>Course description goes here</p>
-                <button class="btn" id="but">Visit course</button>
-            </div>
-            <div class="course-card">
-                <img src="course2.png" alt="Course 2">
-                <h3>Course Title</h3>
-                <p>Course description goes here</p>
-                <button class="btn" id="but">Visit course</button>
-            </div>
-            <div class="course-card">
-                <img src="course2.png" alt="Course 2">
-                <h3>Course Title</h3>
-                <p>Course description goes here</p>
-                <button class="btn" id="but">Visit course</button>
-            </div>
-            <div class="course-card">
-                <img src="course2.png" alt="Course 2">
-                <h3>Course Title</h3>
-                <p>Course description goes here</p>
-                <button class="btn" id="but">Visit course</button>
-            </div>
-            <div class="course-card">
-                <img src="course2.png" alt="Course 2">
-                <h3>Course Title</h3>
-                <p>Course description goes here</p>
-                <button class="btn" id="but">Visit course</button>
-            </div>
-            <div class="course-card">
-                <img src="course2.png" alt="Course 2">
-                <h3>Course Title</h3>
-                <p>Course description goes here</p>
-                <button class="btn" id="but">Visit course</button>
-            </div>
-            <div class="course-card">
-                <img src="course2.png" alt="Course 2">
-                <h3>Course Title</h3>
-                <p>Course description goes here</p>
-                <button class="btn" id="but">Visit course</button>
-            </div>
-            <div class="course-card">
-                <img src="course2.png" alt="Course 2">
-                <h3>Course Title</h3>
-                <p>Course description goes here</p>
-                <button class="btn" id="but">Visit course</button>
-            </div>
-            <div class="course-card">
-                <img src="course2.png" alt="Course 2">
-                <h3>Course Title</h3>
-                <p>Course description goes here</p>
-                <button class="btn" id="but">Visit course</button>
-            </div>
-            <div class="course-card">
-                <img src="course2.png" alt="Course 2">
-                <h3>Course Title</h3>
-                <p>Course description goes here</p>
-                <button class="btn" id="but">Visit course</button>
-            </div>
-            <div class="course-card">
-                <img src="course2.png" alt="Course 2">
-                <h3>Course Title</h3>
-                <p>Course description goes here</p>
-                <button class="btn" id="but">Visit course</button>
-            </div>
-            <div class="course-card">
-                <img src="course2.png" alt="Course 2">
-                <h3>Course Title</h3>
-                <p>Course description goes here</p>
-                <button class="btn" id="but">Visit course</button>
-            </div>
-            <div class="course-card">
-                <img src="course2.png" alt="Course 2">
-                <h3>Course Title</h3>
-                <p>Course description goes here</p>
-                <button class="btn" id="but" >Visit course</button>
-            </div>
-            <div class="course-card">
-                <img src="course2.png" alt="Course 2">
-                <h3>Course Title</h3>
-                <p>Course description goes here</p>
-                <button class="btn" id="but" >Visit course</button>
-            </div>
+            <?php foreach($_SESSION['all_courses_show'] as $the_course): ?>
+                <div class="course-card">
+                    <img src="<?php echo ($the_course->ImageUrl);?>" alt="Course 1">
+                    <h3><?php echo ($the_course->CourseName);?></h3>
+                    <p><?php echo ($the_course->Description);?></p>
+                    <button class="btn" id="but">Visit course</button>
+                </div>
+            <?php endforeach;?>
         </div>
     </section>
-
     <section class="footer">
         <nav class="icons_width">
           <div class="icons">

@@ -17,22 +17,36 @@ session_start();
     <link rel="stylesheet" href="../Components/Card/courseCard.css">
     <link rel="stylesheet" href="./Css/ongoing.css">
     <link rel="stylesheet" href="./Css/profile.css">
-    <link rel="icon" href="./MainPage/MainImg/favicon-removebg-preview.png">
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/ad806ed620.js" crossorigin="anonymous"></script>
     <title>Skillshare360</title>
     <script
         src="https://code.jquery.com/jquery-3.3.1.js"
         integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
         crossorigin="anonymous">
     </script>
-    <script> 
+    <script>
         $(function(){
-            $("#header").load("../Components/Header/header.php"); 
-            $("#footer").load("../Components/Footer/footer.php"); 
+            $("#header").load("../Components/Header/header.php");
+            $("#footer").load("../Components/Footer/footer.php");
             $(".course-card").load("../Components/Card/card.php");
         });
-    </script> 
+
+        function openEditProfilePopup() {
+            document.getElementById("edit-profile-popup").style.display = "block";
+        }
+
+        function closeEditProfilePopup() {
+            document.getElementById("edit-profile-popup").style.display = "none";
+        }
+
+        function openChangePasswordPopup() {
+            document.getElementById("change-password-popup").style.display = "block";
+        }
+
+        function closeChangePasswordPopup() {
+            document.getElementById("change-password-popup").style.display = "none";
+        }
+    </script>
+
 </head>
 <body>
     <section id="header"></section>
@@ -51,11 +65,45 @@ session_start();
                 </div>
             </div>
             <div id="profile-info-buttons">
-                <button id="edit-profile-button">Edit Profile</button>
-                <button id="change-password-button">Change Password</button>
+                <button id="edit-profile-button" onclick="openEditProfilePopup()">Edit Profile</button>
+                <button id="change-password-button" onclick="openChangePasswordPopup()">Change Password</button>
             </div>
         </div>
     </section>
+
+    
+    <!-- Edit Profile Popup -->
+    <div id="edit-profile-popup" class="popup">
+        <div class="popup-content">
+            <label for="edit-name">Name:</label>
+            <input type="text" id="edit-name" name="edit-name">
+
+            <label for="edit-email">Email:</label>
+            <input type="email" id="edit-email" name="edit-email">
+
+            <label for="edit-phone">Phone Number:</label>
+            <input type="text" id="edit-phone" name="edit-phone">
+
+            <button onclick="closeEditProfilePopup()">Confirm</button>
+        </div>
+    </div>
+
+    <!-- Change Password Popup -->
+    <div id="change-password-popup" class="popup">
+        <div class="popup-content">
+            <label for="current-password">Current Password:</label>
+            <input type="password" id="current-password" name="current-password">
+
+            <label for="new-password">New Password:</label>
+            <input type="password" id="new-password" name="new-password">
+
+            <label for="confirm-password">Confirm New Password:</label>
+            <input type="password" id="confirm-password" name="confirm-password">
+
+            <button onclick="closeChangePasswordPopup()">Confirm</button>
+        </div>
+    </div>
+
 
     <section class="activeCourses" id="ongoing">
         <h1>On going courses</h1>

@@ -17,6 +17,9 @@ session_start();
     <link rel="stylesheet" href="../Components/Card/courseCard.css">
     <link rel="stylesheet" href="./Css/ongoing.css">
     <link rel="stylesheet" href="./Css/profile.css">
+    <link rel="icon" href="./MainPage/MainImg/favicon-removebg-preview.png">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ad806ed620.js" crossorigin="anonymous"></script>
     <title>Skillshare360</title>
     <script
         src="https://code.jquery.com/jquery-3.3.1.js"
@@ -96,7 +99,16 @@ session_start();
         </div>
     </section>
 
-    <section id="footer"></section>
+    <section class="footer">
+        <nav class="icons_width">
+          <div class="icons">
+            <a><i class="fab fa-facebook-square fa-2x"></i></a>
+            <a><i class="fab fa-instagram fa-2x"></i></a>
+            <a><i class="fas fa-envelope fa-2x"></i></a>
+          </div>
+          <p id="rights">Skillshare360 © 2023.<br>All rights reserved.</p>
+        </nav>
+    </section>
     <!-- <script src="logedUser.js"></script> -->
     <script>
         const mycourses = document.getElementById("mycourses");

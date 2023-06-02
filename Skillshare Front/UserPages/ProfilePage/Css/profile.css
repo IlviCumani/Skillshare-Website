@@ -82,7 +82,7 @@ h1, h2 {
 #change-password-button:hover {
     transform: scale(1.1);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    background-color: #5DA399;
+    background-color: #397367;
 }
 
 /* Popup Styles */
@@ -114,10 +114,10 @@ h1, h2 {
 .popup-content {
     background-color: #fefefe;
     margin: 20% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 300px;
-    border-radius: 10px;
+    padding: 50px;
+    border: 7px solid #888;
+    width: 400px;
+    border-radius: 75px;
 }
 
 .popup-content label {
@@ -128,13 +128,14 @@ h1, h2 {
 .popup-content input[type="text"],
 .popup-content input[type="email"],
 .popup-content input[type="password"] {
+    border-radius: 5px;
     width: 100%;
     padding: 5px;
     margin-bottom: 10px;
 }
 
 .popup-content button {
-    background-color: #4CAF50;
+    background-color: #397367;
     color: white;
     padding: 5px 10px;
     border: none;

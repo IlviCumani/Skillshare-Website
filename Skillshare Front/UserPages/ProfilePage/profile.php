@@ -1,8 +1,28 @@
 <?php
-
 session_start();
 
+// Check if the user type is set in the session, if not, set it to 'learner' as the default
+if (!isset($_SESSION['type'])) {
+    $_SESSION['type'] = 'learner';
+}
+
+// Function to generate the selected attribute for the user type options
+function isSelected($type, $selectedType)
+{
+    if ($type === $selectedType) {
+        return 'selected';
+    }
+    return '';
+}
+
+// Handle the form submission to update the user type
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['user-type'])) {
+        $_SESSION['type'] = $_POST['user-type'];
+    }
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -60,7 +80,7 @@ session_start();
                     <h2 id="username"><?php if(isset($_SESSION['username'])){echo $_SESSION['username'];} ?></h2>
                     <h2 id="email"><?php if(isset($_SESSION['email'])){echo $_SESSION['email'];} ?></h2>
                     <h2 id="phone"><?php if(isset($_SESSION['phone'])){echo $_SESSION['phone'];} ?></h2>
-                    <h2 id="level"><?php if(isset($_SESSION['type'])){echo $_SESSION['type'];} ?></h2>
+                    <h2 id="level"><?php echo $_SESSION['type']; ?></h2>
                     <!-- <h2 id="level">Instructor</h2> -->
                 </div>
             </div>
@@ -83,6 +103,13 @@ session_start();
 
             <label for="edit-phone">Phone Number:</label>
             <input type="text" id="edit-phone" name="edit-phone">
+            
+            <label for="user-type">User Type:</label>
+            <select id="user-type" name="user-type">
+                <option value="learner" <?php echo isSelected('learner', $_SESSION['type']); ?>>Learner</option>
+                <option value="premium" <?php echo isSelected('premium', $_SESSION['type']); ?>>Premium</option>
+                <option value="instructor" <?php echo isSelected('instructor', $_SESSION['type']); ?>>Instructor</option>
+            </select>
 
             <button onclick="closeEditProfilePopup()">Confirm</button>
         </div>
@@ -162,7 +189,7 @@ session_start();
         const mycourses = document.getElementById("mycourses");
         const level = document.getElementById("level");
 
-        if(level.innerHTML == "Instructor"){
+        if(level.innerHTML === "Instructor"){
             mycourses.style.display = "block";
         }
         else{

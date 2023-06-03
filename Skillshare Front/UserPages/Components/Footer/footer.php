@@ -7,4 +7,4 @@
       </div>
       <p id="rights">Skillshare360 © 2023.<br>All rights reserved.</p>
     </nav>
-  </section>
+</section>

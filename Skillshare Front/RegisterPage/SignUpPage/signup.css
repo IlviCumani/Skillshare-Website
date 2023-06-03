@@ -40,7 +40,7 @@ body {
 	bottom: 0;
 	z-index: 0;
 	-webkit-clip-path: inset(0 0 0 0);
-	clip-path: inset(0 0 0 0);	
+	clip-path: inset(0 0 0 0);		
 }
 
 .screen__background__shape {
@@ -189,6 +189,11 @@ h1{
   #file_input.show{
 	display: block;
   }
+
+  input[type="file"]::file-selector-button{
+	cursor: pointer;
+	display: none;
+  }
   
   /* Safari */
   @-webkit-keyframes spin {
@@ -201,13 +206,16 @@ h1{
     100% { transform: rotate(360deg); }
   }
 
-  @media screen and (max-width: 768px) {
+  @media (max-width: 950px) {
 	.screen__background__shape1 {
 		height: 520px;
 		width: 520px;
 		background: #fff;	
 		top: -3px;
-		right: 170px;	
+		right: calc (100% - 370px);	
 		border-radius: 0 72px 0 0;
 	}
+
+
   }
+

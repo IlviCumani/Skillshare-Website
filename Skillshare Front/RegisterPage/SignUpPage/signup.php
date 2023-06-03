@@ -64,9 +64,9 @@ session_start();
                         <span class="material-symbols-outlined button__icon">arrow_forward_ios</span>
                         <div class="loader" id="loader"></div>
                     </button>	
-                    <button type="button" class="button cancel__submit">
+                    <button class="button cancel__submit">
+                            <span class="material-symbols-outlined button__icon">arrow_back_ios</span>
                             <span class="button__text">Go Back</span>
-                            <i class="button__icon fas fa-chevron-left"></i>
                     </button>
                     <script>
                         const goBackButton = document.querySelector('.cancel__submit');

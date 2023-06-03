@@ -81,5 +81,16 @@ require 'show_all_courses.php';
       </section>
       <script src="../Skillshare Front/MainPage/Script/navig.js"></script>
       <script src="./MainPage/Script/menu.js"></script>
+      <!-- <script>
+        const button = document.getElementByName($co)
+        function does(){
+            
+        
+        
+        }
+        
+
+
+      </script> -->
 </body>
 </html>

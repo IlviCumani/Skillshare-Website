@@ -26,4 +26,17 @@ for($i = 0; $i < $statement->rowCount(); $i++){
         array_push($all_courses,$obj_course);
 }
 $_SESSION['myprofilecourses'] = $all_courses;
+
+function find_Instructor($the_user_id){
+    global $pdo;
+    $sql = 'SELECT Username FROM users Where UserId = :userid';
+    $statement = $pdo->prepare($sql);
+    $statement->bindParam(':userid',$the_user_id);
+    $statement->execute();
+    $name = $statement->fetch();
+    return $name['Username'];
+
+}
+
+
 ?>

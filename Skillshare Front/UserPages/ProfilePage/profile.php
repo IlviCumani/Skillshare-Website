@@ -73,7 +73,7 @@ require 'show_courses_profile.php';
                 <div id="course-info">
                     <h2 id="course-name"> <?php echo $the_course->CourseName?></h2>
                     <h3 id="course-category"><?php echo $the_course->Tag ?></h2>
-                    <h3 id="instructor"><?php echo $the_course->UserId ?></h2>
+                    <h3 id="instructor"><?php echo find_Instructor($the_course->UserId)?></h2>
                 </div>
                 <button id="course-button">Continue</button> 
             </div>

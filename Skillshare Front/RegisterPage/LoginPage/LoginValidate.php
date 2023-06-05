@@ -12,7 +12,7 @@ if(!empty($_POST)){
     $statement->bindParam(':email',$email, PDO::PARAM_STR);
     $statement->execute();
     //var_dump($statement->fetch());
-    echo "Before Check";
+    //echo "Before Check";
     if($statement->rowCount() > 0){
         $the_data = $statement->fetch();
         if($password === $the_data['Password']){
@@ -24,11 +24,19 @@ if(!empty($_POST)){
             header("Location: ../../UserPages/ProfilePage/profile.php");
             exit();
         }
+        else{
+        $_SESSION['user_finding'] = "Try Again!"; 
+        //echo "Not Found";
+        header("Location: login.php");
+        exit();
+
+        }
     }
     else{
-        $_SESSION['user_login'] = "Try Again!"; 
-        echo "Not Found";
+
+        $_SESSION['user_finding'] = "Not Registered!";
         header("Location: login.php");
+        exit();
     }
 
 }

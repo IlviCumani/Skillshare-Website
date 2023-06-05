@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +18,12 @@
                 <div class="screen__content">
                     <form class="login" method="post" action="LoginValidate.php">
                         <h1>Login</h1>
-
+                        <?php
+                            if(isset($_SESSION['user_finding'])){
+                                echo "<p style=\"color: Red;\">".$_SESSION['user_finding']."</p>";
+                    
+                            }
+                        ?>
                         <div class="login__field">
                             <i class="login__icon fas fa-user"></i>
                             <input type="text" name="email" class="login__input" id="emailTF" placeholder="User name / Email">

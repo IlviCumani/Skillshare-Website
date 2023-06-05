@@ -2,6 +2,11 @@
 require 'show_courses_profile.php';
 //session_start();
 
+// // Check if the user type is set in the session, if not, set it to 'learner' as the default
+if (!isset($_SESSION['type'])) {
+    $_SESSION['type'] = 'learner';
+}
+
 // Function to generate the selected attribute for the user type options
 function isSelected($type, $selectedType)
 {

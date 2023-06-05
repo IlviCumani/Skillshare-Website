@@ -34,8 +34,8 @@ require 'show_all_courses.php';
 </head>
 <body>
     <section id="header"></section>
-    <!-- <section id="filter_bar">
-        <div id="myBtnContainer">
+    <section id="filter_bar">
+        <div id="filterDiv">
             <button class="filter active" onclick="filterSelection('all')"> Show all</button>
             <button class="filter" onclick="filterSelection('programming')"> Programming</button>
             <button class="filter" onclick="filterSelection('dancing')"> Dancing</button>
@@ -56,7 +56,7 @@ require 'show_all_courses.php';
             <button class="filter" onclick="filterSelection('history')"> History</button>
             <button class="filter" onclick="filterSelection('geo')"> Geography</button>
         </div>
-    </section> -->
+    </section> 
     <section class="course-section">
         <div class="course-container">
         <?php $cnt = 0?>

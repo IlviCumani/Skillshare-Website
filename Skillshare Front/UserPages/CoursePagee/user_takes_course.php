@@ -11,7 +11,7 @@ $the_sql = 'INSERT INTO take VALUES (:finished, :courseid, :userid)';
 $the_statement = $pdo->prepare($the_sql);
 $finished = 0;
 $the_statement->bindParam(':finished', $finished);
-$the_statement->bindParam(':courseid',$_SESSION['wanted_course_id']);
+$the_statement->bindParam(':courseid',$_GET['courseId']);
 $the_statement->bindParam(':userid',$user_id['UserId']);
 $the_statement->execute();
 header("Location: ../ProfilePage/profile.php");

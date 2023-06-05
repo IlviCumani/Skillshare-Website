@@ -64,7 +64,7 @@ require 'show_all_courses.php';
                     <img src="<?php echo ($the_course->ImageUrl);?>" alt="Course 1">
                     <h3><?php echo ($the_course->CourseName);?></h3>
                     <p><?php echo ($the_course->Description);?></p>
-                    <button class="btn" id="but">Visit course</button>
+                    <button class="btn" value="<?php echo $the_course->CourseId?>" onclick="joinCourse(event)">Join course</button>
                 </div>
             <?php endforeach;?>
         </div>
@@ -81,5 +81,14 @@ require 'show_all_courses.php';
       </section>
       <script src="../Skillshare Front/MainPage/Script/navig.js"></script>
       <script src="./MainPage/Script/menu.js"></script>
+      <script>
+        function joinCourse(event){
+            const _courseId = event.target.value;
+            window.location.href = './user_takes_course.php?courseId=' + _courseId;
+        }
+        
+
+
+      </script>
 </body>
 </html>

@@ -1,7 +1,5 @@
 <?php
 require 'show_courses_profile.php';
-//session_start();
-
 
 // Function to generate the selected attribute for the user type options
 function isSelected($type, $selectedType)
@@ -35,7 +33,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="../Components/Card/courseCard.css">
     <link rel="stylesheet" href="./Css/ongoing.css">
     <link rel="stylesheet" href="./Css/profile.css">
-    <title>Skillshare360</title>
+    <title>Profile Page</title>
+    <link rel="shortcut icon" type="image/x-icon" href="">
+    <link rel="icon" href="./MainPage/MainImg/favicon-removebg-preview.png">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ad806ed620.js" crossorigin="anonymous"></script>
     <script
         src="https://code.jquery.com/jquery-3.3.1.js"
         integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
@@ -63,6 +65,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         function closeChangePasswordPopup() {
             document.getElementById("change-password-popup").style.display = "none";
         }
+
+        // Close the popup when clicking outside
+        window.onclick = function(event) {
+            if (event.target.classList.contains('popup')) {
+                event.target.style.display = 'none';
+            }
+        };
+
+        // Close the popup when pressing ESC key
+        document.onkeydown = function(event) {
+            event = event || window.event;
+            if (event.keyCode === 27) {
+                var popups = document.getElementsByClassName('popup');
+                for (var i = 0; i < popups.length; i++) {
+                    popups[i].style.display = 'none';
+                }
+            }
+        };
     </script>
 
 </head>
@@ -110,6 +130,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </select>
 
             <button onclick="closeEditProfilePopup()">Confirm</button>
+            <button onclick="event.stopPropagation(); closeEditProfilePopup()">Back</button>
         </div>
     </div>
 
@@ -126,6 +147,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <input type="password" id="confirm-password" name="confirm-password">
 
             <button onclick="closeChangePasswordPopup()">Confirm</button>
+            <button onclick="event.stopPropagation(); closeChangePasswordPopup()">Back</button>
         </div>
     </div>
 
@@ -178,12 +200,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                  </span>
             </button>
         </div>
+
+        <?php //print_r($_SESSION['theinstcourse']); ?>
         
-        <div class=all-Courses>
-            <div class="course-card"></div>
-            <div class="course-card"></div>
-            <div class="course-card"></div>
+        <div class="all-Courses">
+            <?php foreach($_SESSION['theinstcourse'] as $show_course): ?>
+            <div class="course-card">
+                <div id="course-img-container">
+                    <img src="<?php echo($show_course->ImageUrl) ?>" alt="Avatar" class="course-Img">
+                </div>
+                <div id="course-info">
+                    <h2 id="course-name"><?php echo $show_course->CourseName ?></h2>
+                    <h3 id="course-category"><?php echo $show_course->Tag ?></h2>
+                    <h3 id="instructor"><?php echo find_Instructor($show_course->UserId)?></h2>
+                </div>
+                <button id="course-button">Continue</button> 
+            </div>
+            <?php endforeach;?>
+        
         </div>
+        
     </section>
 
     <section class="footer">
@@ -197,6 +233,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </nav>
     </section>
     <!-- <script src="logedUser.js"></script> -->
+    <script>
+        const my_courses = document.getElementById('mycourses');
+        const active_courses = document.getElementById('ongoing');
+        const finished_courses = document.getElementById('finished');
+
+        function displayCourses(id) {
+            my_courses.style.display = 'none';
+            active_courses.style.display = 'none';
+            finished_courses.style.display = 'none';
+
+            document.getElementById(id).style.display = 'block';
+        }
+    </script>
+    <script>
+        document.getElementById('createCourse').addEventListener('click', function () {
+            window.location.href = '../CoursePagee/courseForm/courseForm.php';
+        });
+
+    </script>
     <script>
         const mycourses = document.getElementById("mycourses");
         const level = document.getElementById("level");

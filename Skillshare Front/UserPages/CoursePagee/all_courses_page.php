@@ -86,9 +86,6 @@ require 'show_all_courses.php';
             const _courseId = event.target.value;
             window.location.href = './user_takes_course.php?courseId=' + _courseId;
         }
-        
-
-
       </script>
 </body>
 </html>

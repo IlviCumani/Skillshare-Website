@@ -1,6 +1,6 @@
 <?php
-require 'show_courses_profile.php';
-//session_start();
+
+session_start();
 
 ?>
 <!DOCTYPE html>
@@ -31,7 +31,7 @@ require 'show_courses_profile.php';
         $(function(){
             $("#header").load("../Components/Header/header.php"); 
             $("#footer").load("../Components/Footer/footer.php"); 
-            //$(".course-card").load("../Components/Card/card.php");
+            $(".course-card").load("../Components/Card/card.php");
         });
     </script> 
 </head>
@@ -63,23 +63,9 @@ require 'show_courses_profile.php';
 
         <div class=all-Courses>
 
-            <!-- <div class="course-card"></div>
             <div class="course-card"></div>
-            <div class="course-card"></div> -->
-        <?php foreach($_SESSION['myprofilecourses'] as $the_course):?>
-            <div class="course-card">
-                <div id="course-img-container">
-                    <img src="<?php echo $the_course->ImageUrl?>" alt="Avatar" class="course-Img">
-                </div>
-                <div id="course-info">
-                    <h2 id="course-name"> <?php echo $the_course->CourseName?></h2>
-                    <h3 id="course-category"><?php echo $the_course->Tag ?></h2>
-                    <h3 id="instructor"><?php echo find_Instructor($the_course->UserId)?></h2>
-                </div>
-                <button id="course-button">Continue</button> 
-            </div>
-        <?php endforeach;?>
-
+            <div class="course-card"></div>
+            <div class="course-card"></div>
         </div> 
     </section>
 

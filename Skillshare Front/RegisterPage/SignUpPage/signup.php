@@ -11,6 +11,7 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../SignUpPage/signup.css">
+    <link rel="stylesheet" href="../../MainPage/Css/scroll.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,1,0" />
     <link rel="icon" href="../../MainPage/MainImg/favicon-removebg-preview.png">
     <title>Skillshare360</title>

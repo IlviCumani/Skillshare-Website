@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="../../MainPage/Css/scroll.css">
     <link rel="icon" href="../../MainPage/MainImg/favicon-removebg-preview.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Skillshare360</title>
@@ -15,7 +19,12 @@
                 <div class="screen__content">
                     <form class="login" method="post" action="LoginValidate.php">
                         <h1>Login</h1>
-
+                        <?php
+                            if(isset($_SESSION['user_finding'])){
+                                echo "<p style=\"color: Red;\">".$_SESSION['user_finding']."</p>";
+                    
+                            }
+                        ?>
                         <div class="login__field">
                             <i class="login__icon fas fa-user"></i>
                             <input type="text" name="email" class="login__input" id="emailTF" placeholder="User name / Email">

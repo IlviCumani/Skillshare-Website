@@ -57,24 +57,24 @@ session_start();
                             <div class="custom-select" name="coursetype" style="width:200px;">
                                 <select name="coursetag">
                                     <option value="0">Select Type</option>
-                                    <option value="1">Programming</option>
-                                    <option value="2">Dancing</option>
-                                    <option value="3">Cooking</option>
-                                    <option value="4">Drawing</option>
-                                    <option value="5">Photography</option>
-                                    <option value="6">Music</option>
-                                    <option value="7">Language</option>
-                                    <option value="8">Fitness</option>
-                                    <option value="9">Business</option>
-                                    <option value="10">Marketing</option>
-                                    <option value="11">Design</option>
-                                    <option value="12">Calculus</option>
-                                    <option value="13">Physics</option>
-                                    <option value="14">Chemistry</option>
-                                    <option value="15">Biology</option>
-                                    <option value="16">Psychology</option>
-                                    <option value="17">History</option>
-                                    <option value="18">Geography</option>
+                                    <option value="Programming">Programming</option>
+                                    <option value="Dancing">Dancing</option>
+                                    <option value="Cooking">Cooking</option>
+                                    <option value="Drawing">Drawing</option>
+                                    <option value="Photography">Photography</option>
+                                    <option value="Music">Music</option>
+                                    <option value="Language">Language</option>
+                                    <option value="Fitness">Fitness</option>
+                                    <option value="Business">Business</option>
+                                    <option value="Marketing">Marketing</option>
+                                    <option value="Design">Design</option>
+                                    <option value="Calculus">Calculus</option>
+                                    <option value="Physics">Physics</option>
+                                    <option value="Chemistry">Chemistry</option>
+                                    <option value="Biology">Biology</option>
+                                    <option value="Psychology">Psychology</option>
+                                    <option value="History">History</option>
+                                    <option value="Geography">Geography</option>
                                 </select>
                             </div>
                         </div>

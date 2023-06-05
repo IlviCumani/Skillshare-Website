@@ -1,0 +1,33 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background: #ffffff;
+}
+
+#container{
+    padding-top: 100px;
+    padding-left: 10px; 
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#pikachu{
+    width: 300px;
+    height: 300px;
+    margin: 0px;
+    padding: 0px;
+    justify-self: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#container img{
+    width: 300px;
+    height: 300px;
+    margin: 0px;
+    padding: 0px;
+    justify-self: center;
+}

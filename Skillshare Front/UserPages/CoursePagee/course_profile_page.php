@@ -1,39 +1,33 @@
-<?php
 
-session_start();
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Profile</title>
     <link rel="icon" href="../../MainPage/MainImg/favicon-removebg-preview.png">
     <link rel="stylesheet" href="../../MainPage/Css/header.css">
     <link rel="stylesheet" href="../../MainPage/Css/footer.css">
     <link rel="stylesheet" href="../../MainPage/Css/scroll.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="../Components/Card/courseCard.css">
-    <link rel="stylesheet" href="./Css/ongoing.css">
-    <link rel="stylesheet" href="./Css/profile.css">
-    <link rel="icon" href="./MainPage/MainImg/favicon-removebg-preview.png">
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/ad806ed620.js" crossorigin="anonymous"></script>
-    <title>Skillshare360</title>
-    <script
-        src="https://code.jquery.com/jquery-3.3.1.js"
-        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-        crossorigin="anonymous">
-    </script>
-    <script> 
-        $(function(){
-            $("#header").load("../Components/Header/header.php"); 
-            $("#footer").load("../Components/Footer/footer.php"); 
-            $(".course-card").load("../Components/Card/card.php");
-        });
-    </script> 
+    <link rel="stylesheet" href="../../UserPages/ProfilePage/Css/profile.css">
+    <link rel="stylesheet" href="../UserPages/Components/Card/courseCard.css">
+    <link rel="stylesheet" href="course.css">
+    <link rel="stylesheet" href="searchBar.css"><script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous">
+</script>
+<link rel="shortcut icon" type="image/x-icon" href="">
+<link rel="icon" href="./MainPage/MainImg/favicon-removebg-preview.png">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@700&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/ad806ed620.js" crossorigin="anonymous"></script>
+<script>
+    $(function(){
+        $("#header").load("../Components/Header/header.php");
+        $("#footer").load("footer.php");
+    });
+</script>
 </head>
 <body>
     <section id="header"></section>
@@ -52,53 +46,25 @@ session_start();
                 </div>
             </div>
             <div id="profile-info-buttons">
-                <button id="edit-profile-button">Edit Profile</button>
-                <button id="change-password-button">Change Password</button>
             </div>
         </div>
     </section>
-
-    <section class="activeCourses" id="ongoing">
-        <h1>On going courses</h1>
-
-        <div class=all-Courses>
-
-            <div class="course-card"></div>
-            <div class="course-card"></div>
-            <div class="course-card"></div>
-        </div> 
-    </section>
-
-    <section class="activeCourses" id="finished">
-        <h1>Finished Courses</h1>
-
-        <div class=all-Courses>
-            <div class="course-card"></div>
-            <div class="course-card"></div>
-            <div class="course-card"></div>
-            <div class="course-card"></div>
-            <div class="course-card"></div>
-            <div class="course-card"></div>
-        </div>    
-    </section>   
-
-    <section class="activeCourses" id="mycourses">
-
-        <div id="Mysourses-Top">
-            <h1>My courses</h1>
-             <button id="createCourse" onclick = "window.location.href = '../CoursePagee/courseForm/courseForm.php';">
-                <span class="material-symbols-outlined">
-                    add_circle
-                 </span>
-            </button>
-        </div>
         
-        <div class=all-Courses>
-            <div class="course-card"></div>
-            <div class="course-card"></div>
-            <div class="course-card"></div>
-        </div>
-    </section>
+        <section class="course-details">
+            <div>
+                <h2>Course Title</h2>
+                <p>Course description goes here</p>
+            </div>
+            <div> 
+                <h3>Course Assignment</h3>
+                <p>Lorem ipsum </p>
+            </div>
+            <div class="course-buttons">
+                <a href="../../UserPages/ProfilePage/profile.php"><button class="btn">Join Course</button></a>
+                <!--<button class="btn">Create Assignment</button>--> 
+                <!--<button class="btn">Edit course page</button> -->
+            </div>
+        </section>
 
     <section class="footer">
         <nav class="icons_width">
@@ -109,18 +75,9 @@ session_start();
           </div>
           <p id="rights">Skillshare360 © 2023.<br>All rights reserved.</p>
         </nav>
-    </section>
-    <!-- <script src="logedUser.js"></script> -->
-    <script>
-        const mycourses = document.getElementById("mycourses");
-        const level = document.getElementById("level");
-
-        if(level.innerHTML == "Instructor"){
-            mycourses.style.display = "block";
-        }
-        else{
-            mycourses.style.display = "none";
-        }
-    </script>
+      </section>
+      <script src="../Skillshare Front/MainPage/Script/navig.js"></script>
+      <script src="./MainPage/Script/menu.js"></script>
+      
 </body>
 </html>

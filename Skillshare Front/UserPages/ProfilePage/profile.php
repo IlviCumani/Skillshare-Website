@@ -1,5 +1,6 @@
 <?php
-session_start();
+require 'show_courses_profile.php';
+//session_start();
 
 // Check if the user type is set in the session, if not, set it to 'learner' as the default
 if (!isset($_SESSION['type'])) {
@@ -45,9 +46,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </script>
     <script>
         $(function(){
-            $("#header").load("../Components/Header/header.php");
-            $("#footer").load("../Components/Footer/footer.php");
-            $(".course-card").load("../Components/Card/card.php");
+            $("#header").load("../Components/Header/header.php"); 
+            $("#footer").load("../Components/Footer/footer.php"); 
+            //$(".course-card").load("../Components/Card/card.php");
         });
 
         function openEditProfilePopup() {

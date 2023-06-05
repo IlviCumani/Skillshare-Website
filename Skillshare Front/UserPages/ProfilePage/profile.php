@@ -35,7 +35,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="../Components/Card/courseCard.css">
     <link rel="stylesheet" href="./Css/ongoing.css">
     <link rel="stylesheet" href="./Css/profile.css">
-    <title>Skillshare360</title>
+    <title>Profile Page</title>
+    <link rel="shortcut icon" type="image/x-icon" href="">
+    <link rel="icon" href="./MainPage/MainImg/favicon-removebg-preview.png">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ad806ed620.js" crossorigin="anonymous"></script>
     <script
         src="https://code.jquery.com/jquery-3.3.1.js"
         integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="

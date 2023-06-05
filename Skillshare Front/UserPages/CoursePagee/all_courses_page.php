@@ -59,9 +59,11 @@ require 'show_all_courses.php';
     </section> -->
     <section class="course-section">
         <div class="course-container">
+        <?php $cnt = 0?>
             <?php foreach($_SESSION['all_courses_show'] as $the_course): ?>
                 <div class="course-card">
-                    <img src="<?php echo ($the_course->ImageUrl);?>" alt="Course 1">
+                    <?php $cnt++;?>
+                    <img src="<?php echo ($the_course->ImageUrl);?>" alt="Course <?php echo $cnt?>">
                     <h3><?php echo ($the_course->CourseName);?></h3>
                     <p><?php echo ($the_course->Description);?></p>
                     <button class="btn" value="<?php echo $the_course->CourseId?>" onclick="joinCourse(event)">Join course</button>

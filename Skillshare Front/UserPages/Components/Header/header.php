@@ -10,7 +10,7 @@
             <ul class="nav-list">
                 <li><a href="../ProfilePage/profile.php">My Page</a></li>
                 <li><a href="../CoursePagee/courses.php">Courses</a></li>
-                <li><a href="">Community</a></li>
+                <li><a href="../CommunityPage/community.php">Community</a></li>
                 <li><a href="./../../home.php">Log Out</a></li>
             </ul>
     </nav>

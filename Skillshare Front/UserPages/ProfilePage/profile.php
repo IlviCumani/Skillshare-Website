@@ -178,12 +178,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                  </span>
             </button>
         </div>
+
+        <?php //print_r($_SESSION['theinstcourse']); ?>
         
-        <div class=all-Courses>
-            <div class="course-card"></div>
-            <div class="course-card"></div>
-            <div class="course-card"></div>
+        <div class="all-Courses">
+            <?php foreach($_SESSION['theinstcourse'] as $show_course): ?>
+            <div class="course-card">
+                <div id="course-img-container">
+                    <img src="<?php echo($show_course->ImageUrl) ?>" alt="Avatar" class="course-Img">
+                </div>
+                <div id="course-info">
+                    <h2 id="course-name"><?php echo $show_course->CourseName ?></h2>
+                    <h3 id="course-category"><?php echo $show_course->Tag ?></h2>
+                    <h3 id="instructor"><?php echo find_Instructor($show_course->UserId)?></h2>
+                </div>
+                <button id="course-button">Continue</button> 
+            </div>
+            <?php endforeach;?>
+        
         </div>
+        
     </section>
 
     <section class="footer">

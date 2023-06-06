@@ -43,7 +43,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </script>
     <script>
         $(function(){
-            $("#header").load("../Components/Header/header.php"); 
             $("#footer").load("../Components/Footer/footer.php"); 
             //$(".course-card").load("../Components/Card/card.php");
         });
@@ -67,7 +66,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 </head>
 <body>
-    <section id="header"></section>
+    <section id="header">
+        <?php require "../Components/Header/header.php" ?>
+    </section>
     <section id="profile-section">
         <div id="profile-info-container">
             <div id="profile-info">

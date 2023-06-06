@@ -35,7 +35,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="../Components/Card/courseCard.css">
     <link rel="stylesheet" href="./Css/ongoing.css">
     <link rel="stylesheet" href="./Css/profile.css">
-    <title>Skillshare360</title>
+    <title>Profile Page</title>
+    <link rel="shortcut icon" type="image/x-icon" href="">
+    <link rel="icon" href="./MainPage/MainImg/favicon-removebg-preview.png">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ad806ed620.js" crossorigin="anonymous"></script>
     <script
         src="https://code.jquery.com/jquery-3.3.1.js"
         integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
@@ -179,12 +183,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                  </span>
             </button>
         </div>
+
+        <?php //print_r($_SESSION['theinstcourse']); ?>
         
-        <div class=all-Courses>
-            <div class="course-card"></div>
-            <div class="course-card"></div>
-            <div class="course-card"></div>
+        <div class="all-Courses">
+            <?php foreach($_SESSION['theinstcourse'] as $show_course): ?>
+            <div class="course-card">
+                <div id="course-img-container">
+                    <img src="<?php echo($show_course->ImageUrl) ?>" alt="Avatar" class="course-Img">
+                </div>
+                <div id="course-info">
+                    <h2 id="course-name"><?php echo $show_course->CourseName ?></h2>
+                    <h3 id="course-category"><?php echo $show_course->Tag ?></h2>
+                    <h3 id="instructor"><?php echo find_Instructor($show_course->UserId)?></h2>
+                </div>
+                <button id="course-button">Continue</button> 
+            </div>
+            <?php endforeach;?>
+        
         </div>
+        
     </section>
 
     <section class="footer">

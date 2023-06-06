@@ -1,3 +1,7 @@
+<?php 
+require 'show_all_courses.php';
+//session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,22 +45,24 @@
             </div>
         </div>
     </section>
-
+    
     <section class="course-section">
-        <h2>Popular Courses</h2>
+    <h2>Popular Courses</h2>
         <div class="course-container">
-            <div class="course-card">
-                <img src="course1.png" alt="Course 1">
-                <h3>Course Title</h3>
-                <p>Course description goes here</p>
-                <button class="btn" id="but">Visit course</button>
-            </div>
-            <div class="course-card">
-                <img src="course2.png" alt="Course 2">
-                <h3>Course Title</h3>
-                <p>Course description goes here</p>
-                <button class="btn" id="but">Visit course</button>
-            </div>
+            <?php $cnt = 0 ?>
+            <?php foreach($_SESSION['all_courses_show'] as $the_course): ?>
+              
+                <div class="course-card">
+                    <img src="<?php echo $the_course->ImageUrl;?>" alt="Course 1">
+                    <h3><?php echo $the_course->CourseName;?></h3>
+                    <p><?php echo $the_course->Description;?></p>
+                    <button class="btn" value="<?php echo $the_course->CourseId?>" onclick="joinCourse(event)">Join course</button>
+                    <?php $cnt++?>
+                    <?php if($cnt>=3){
+                        break;
+                    } ?>
+                </div>
+            <?php endforeach;?>
         </div>
     </section>
 
@@ -79,5 +85,11 @@
       </section>
       <script src="../Skillshare Front/MainPage/Script/navig.js"></script>
       <script src="./MainPage/Script/menu.js"></script>
+      <script>
+        function joinCourse(event){
+            const _courseId = event.target.value;
+            window.location.href = './user_takes_course.php?courseId=' + _courseId;
+        }
+      </script>
 </body>
 </html>

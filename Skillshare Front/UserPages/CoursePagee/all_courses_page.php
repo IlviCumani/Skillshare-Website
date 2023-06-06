@@ -34,8 +34,8 @@ require 'show_all_courses.php';
 </head>
 <body>
     <section id="header"></section>
-    <!-- <section id="filter_bar">
-        <div id="myBtnContainer">
+    <section id="filter_bar">
+        <div id="filterDiv">
             <button class="filter active" onclick="filterSelection('all')"> Show all</button>
             <button class="filter" onclick="filterSelection('programming')"> Programming</button>
             <button class="filter" onclick="filterSelection('dancing')"> Dancing</button>
@@ -56,12 +56,14 @@ require 'show_all_courses.php';
             <button class="filter" onclick="filterSelection('history')"> History</button>
             <button class="filter" onclick="filterSelection('geo')"> Geography</button>
         </div>
-    </section> -->
+    </section> 
     <section class="course-section">
         <div class="course-container">
+        <?php $cnt = 0?>
             <?php foreach($_SESSION['all_courses_show'] as $the_course): ?>
                 <div class="course-card">
-                    <img src="<?php echo ($the_course->ImageUrl);?>" alt="Course 1">
+                    <?php $cnt++;?>
+                    <img src="<?php echo ($the_course->ImageUrl);?>" alt="Course <?php echo $cnt?>">
                     <h3><?php echo ($the_course->CourseName);?></h3>
                     <p><?php echo ($the_course->Description);?></p>
                     <button class="btn" value="<?php echo $the_course->CourseId?>" onclick="joinCourse(event)">Join course</button>
@@ -86,9 +88,6 @@ require 'show_all_courses.php';
             const _courseId = event.target.value;
             window.location.href = './user_takes_course.php?courseId=' + _courseId;
         }
-        
-
-
       </script>
 </body>
 </html>

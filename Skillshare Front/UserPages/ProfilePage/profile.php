@@ -1,8 +1,23 @@
 <?php
 require 'show_courses_profile.php';
-//session_start();
 
+// Function to generate the selected attribute for the user type options
+function isSelected($type, $selectedType)
+{
+    if ($type === $selectedType) {
+        return 'selected';
+    }
+    return '';
+}
+
+// Handle the form submission to update the user type
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['user-type'])) {
+        $_SESSION['type'] = $_POST['user-type'];
+    }
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,25 +33,62 @@ require 'show_courses_profile.php';
     <link rel="stylesheet" href="../Components/Card/courseCard.css">
     <link rel="stylesheet" href="./Css/ongoing.css">
     <link rel="stylesheet" href="./Css/profile.css">
+    <title>Profile Page</title>
+    <link rel="shortcut icon" type="image/x-icon" href="">
     <link rel="icon" href="./MainPage/MainImg/favicon-removebg-preview.png">
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/ad806ed620.js" crossorigin="anonymous"></script>
-    <title>Skillshare360</title>
     <script
         src="https://code.jquery.com/jquery-3.3.1.js"
         integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
         crossorigin="anonymous">
     </script>
-    <script> 
+    <script>
         $(function(){
-            $("#header").load("../Components/Header/header.php"); 
             $("#footer").load("../Components/Footer/footer.php"); 
             //$(".course-card").load("../Components/Card/card.php");
         });
-    </script> 
+
+        function openEditProfilePopup() {
+            document.getElementById("edit-profile-popup").style.display = "block";
+        }
+
+        function closeEditProfilePopup() {
+            document.getElementById("edit-profile-popup").style.display = "none";
+        }
+
+        function openChangePasswordPopup() {
+            document.getElementById("change-password-popup").style.display = "block";
+        }
+
+        function closeChangePasswordPopup() {
+            document.getElementById("change-password-popup").style.display = "none";
+        }
+
+        // Close the popup when clicking outside
+        window.onclick = function(event) {
+            if (event.target.classList.contains('popup')) {
+                event.target.style.display = 'none';
+            }
+        };
+
+        // Close the popup when pressing ESC key
+        document.onkeydown = function(event) {
+            event = event || window.event;
+            if (event.keyCode === 27) {
+                var popups = document.getElementsByClassName('popup');
+                for (var i = 0; i < popups.length; i++) {
+                    popups[i].style.display = 'none';
+                }
+            }
+        };
+    </script>
+
 </head>
 <body>
-    <section id="header"></section>
+    <section id="header">
+        <?php require "../Components/Header/header.php" ?>
+    </section>
     <section id="profile-section">
         <div id="profile-info-container">
             <div id="profile-info">
@@ -47,16 +99,98 @@ require 'show_courses_profile.php';
                     <h2 id="username"><?php if(isset($_SESSION['username'])){echo $_SESSION['username'];} ?></h2>
                     <h2 id="email"><?php if(isset($_SESSION['email'])){echo $_SESSION['email'];} ?></h2>
                     <h2 id="phone"><?php if(isset($_SESSION['phone'])){echo $_SESSION['phone'];} ?></h2>
-                    <h2 id="level"><?php if(isset($_SESSION['type'])){echo $_SESSION['type'];} ?></h2>
+                    <h2 id="level"><?php echo $_SESSION['type']; ?></h2>
                     <!-- <h2 id="level">Instructor</h2> -->
                 </div>
             </div>
             <div id="profile-info-buttons">
-                <button id="edit-profile-button">Edit Profile</button>
-                <button id="change-password-button">Change Password</button>
+                <button id="edit-profile-button" onclick="openEditProfilePopup()">Edit Profile</button>
+                <button id="change-password-button" onclick="openChangePasswordPopup()">Change Password</button>
             </div>
         </div>
     </section>
+
+    
+    <!-- Edit Profile Popup -->
+<div id="edit-profile-popup" class="popup">
+    <div class="popup-content">
+      <form id="edit-profile-form" action="update-profile.php" method="GET">
+        <label for="edit-name">Name:</label>
+        <input type="text" id="edit-name" name="edit-name">
+  
+        <label for="edit-email">Email:</label>
+        <input type="email" id="edit-email" name="edit-email">
+  
+        <label for="edit-phone">Phone Number:</label>
+        <input type="text" id="edit-phone" name="edit-phone">
+  
+        <label for="user-type">User Type:</label>
+        <select id="user-type" name="user-type">
+          <option value="learner" <?php echo isSelected('learner', $_SESSION['type']); ?>>Learner</option>
+          <option value="premium" <?php echo isSelected('premium', $_SESSION['type']); ?>>Premium</option>
+          <option value="instructor" <?php echo isSelected('instructor', $_SESSION['type']); ?>>Instructor</option>
+        </select>
+  
+        <button type="submit">Confirm</button>
+        <button type="button" onclick="event.stopPropagation(); closeEditProfilePopup()">Back</button>
+      </form>
+    </div>
+  </div>
+  
+  <script>
+    function updateProfile() {
+      event.preventDefault(); // Prevent the default form submission
+  
+      var form = document.getElementById("edit-profile-form");
+      var name = document.getElementById("edit-name").value;
+      var email = document.getElementById("edit-email").value;
+      var phone = document.getElementById("edit-phone").value;
+      var userType = document.getElementById("user-type").value;
+  
+      var xhr = new XMLHttpRequest();
+      var url = form.getAttribute("action");
+  
+      // Construct the query string with the form data
+      var queryString = "?edit-name=" + encodeURIComponent(name) +
+                        "&edit-email=" + encodeURIComponent(email) +
+                        "&edit-phone=" + encodeURIComponent(phone) +
+                        "&user-type=" + encodeURIComponent(userType);
+  
+      xhr.open("GET", url + queryString, true);
+  
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          // Request was successful
+          console.log(xhr.responseText);
+          // Process the response or perform any other actions
+        }
+      };
+  
+      xhr.send();
+    }
+  
+    // Attach the updateProfile function to the form submission event
+    document.getElementById("edit-profile-form").addEventListener("submit", updateProfile);
+  </script>
+  
+
+    <!-- Change Password Popup -->
+    <div id="change-password-popup" class="popup">
+        <div class="popup-content">
+            <label for="current-password">Current Password:</label>
+            <input type="password" id="current-password" name="current-password">
+
+            <label for="new-password">New Password:</label>
+            <input type="password" id="new-password" name="new-password">
+
+            <label for="confirm-password">Confirm New Password:</label>
+            <input type="password" id="confirm-password" name="confirm-password">
+
+            <button onclick="closeChangePasswordPopup()">Confirm</button>
+            <button onclick="event.stopPropagation(); closeChangePasswordPopup()">Back</button>
+        </div>
+    </div>
+
 
     <section class="activeCourses" id="ongoing">
         <h1>On going courses</h1>
@@ -106,12 +240,26 @@ require 'show_courses_profile.php';
                  </span>
             </button>
         </div>
+
+        <?php //print_r($_SESSION['theinstcourse']); ?>
         
-        <div class=all-Courses>
-            <div class="course-card"></div>
-            <div class="course-card"></div>
-            <div class="course-card"></div>
+        <div class="all-Courses">
+            <?php foreach($_SESSION['theinstcourse'] as $show_course): ?>
+            <div class="course-card">
+                <div id="course-img-container">
+                    <img src="<?php echo($show_course->ImageUrl) ?>" alt="Avatar" class="course-Img">
+                </div>
+                <div id="course-info">
+                    <h2 id="course-name"><?php echo $show_course->CourseName ?></h2>
+                    <h3 id="course-category"><?php echo $show_course->Tag ?></h2>
+                    <h3 id="instructor"><?php echo find_Instructor($show_course->UserId)?></h2>
+                </div>
+                <button id="course-button">Continue</button> 
+            </div>
+            <?php endforeach;?>
+        
         </div>
+        
     </section>
 
     <section class="footer">
@@ -126,10 +274,29 @@ require 'show_courses_profile.php';
     </section>
     <!-- <script src="logedUser.js"></script> -->
     <script>
+        const my_courses = document.getElementById('mycourses');
+        const active_courses = document.getElementById('ongoing');
+        const finished_courses = document.getElementById('finished');
+
+        function displayCourses(id) {
+            my_courses.style.display = 'none';
+            active_courses.style.display = 'none';
+            finished_courses.style.display = 'none';
+
+            document.getElementById(id).style.display = 'block';
+        }
+    </script>
+    <script>
+        document.getElementById('createCourse').addEventListener('click', function () {
+            window.location.href = '../CoursePagee/courseForm/courseForm.php';
+        });
+
+    </script>
+    <script>
         const mycourses = document.getElementById("mycourses");
         const level = document.getElementById("level");
 
-        if(level.innerHTML == "Instructor"){
+        if(level.innerHTML === "Instructor"){
             mycourses.style.display = "block";
         }
         else{

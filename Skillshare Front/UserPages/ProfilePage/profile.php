@@ -111,28 +111,67 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     
     <!-- Edit Profile Popup -->
-    <div id="edit-profile-popup" class="popup">
-        <div class="popup-content">
-            <label for="edit-name">Name:</label>
-            <input type="text" id="edit-name" name="edit-name">
-
-            <label for="edit-email">Email:</label>
-            <input type="email" id="edit-email" name="edit-email">
-
-            <label for="edit-phone">Phone Number:</label>
-            <input type="text" id="edit-phone" name="edit-phone">
-            
-            <label for="user-type">User Type:</label>
-            <select id="user-type" name="user-type">
-                <option value="learner" <?php echo isSelected('learner', $_SESSION['type']); ?>>Learner</option>
-                <option value="premium" <?php echo isSelected('premium', $_SESSION['type']); ?>>Premium</option>
-                <option value="instructor" <?php echo isSelected('instructor', $_SESSION['type']); ?>>Instructor</option>
-            </select>
-
-            <button onclick="closeEditProfilePopup()">Confirm</button>
-            <button onclick="event.stopPropagation(); closeEditProfilePopup()">Back</button>
-        </div>
+<div id="edit-profile-popup" class="popup">
+    <div class="popup-content">
+      <form id="edit-profile-form" action="update-profile.php" method="GET">
+        <label for="edit-name">Name:</label>
+        <input type="text" id="edit-name" name="edit-name">
+  
+        <label for="edit-email">Email:</label>
+        <input type="email" id="edit-email" name="edit-email">
+  
+        <label for="edit-phone">Phone Number:</label>
+        <input type="text" id="edit-phone" name="edit-phone">
+  
+        <label for="user-type">User Type:</label>
+        <select id="user-type" name="user-type">
+          <option value="learner" <?php echo isSelected('learner', $_SESSION['type']); ?>>Learner</option>
+          <option value="premium" <?php echo isSelected('premium', $_SESSION['type']); ?>>Premium</option>
+          <option value="instructor" <?php echo isSelected('instructor', $_SESSION['type']); ?>>Instructor</option>
+        </select>
+  
+        <button type="submit">Confirm</button>
+        <button type="button" onclick="event.stopPropagation(); closeEditProfilePopup()">Back</button>
+      </form>
     </div>
+  </div>
+  
+  <script>
+    function updateProfile() {
+      event.preventDefault(); // Prevent the default form submission
+  
+      var form = document.getElementById("edit-profile-form");
+      var name = document.getElementById("edit-name").value;
+      var email = document.getElementById("edit-email").value;
+      var phone = document.getElementById("edit-phone").value;
+      var userType = document.getElementById("user-type").value;
+  
+      var xhr = new XMLHttpRequest();
+      var url = form.getAttribute("action");
+  
+      // Construct the query string with the form data
+      var queryString = "?edit-name=" + encodeURIComponent(name) +
+                        "&edit-email=" + encodeURIComponent(email) +
+                        "&edit-phone=" + encodeURIComponent(phone) +
+                        "&user-type=" + encodeURIComponent(userType);
+  
+      xhr.open("GET", url + queryString, true);
+  
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          // Request was successful
+          console.log(xhr.responseText);
+          // Process the response or perform any other actions
+        }
+      };
+  
+      xhr.send();
+    }
+  
+    // Attach the updateProfile function to the form submission event
+    document.getElementById("edit-profile-form").addEventListener("submit", updateProfile);
+  </script>
+  
 
     <!-- Change Password Popup -->
     <div id="change-password-popup" class="popup">

@@ -16,14 +16,13 @@
     </script>
     <script> 
         $(function(){
-            $("#header").load("../Components/Header/header.php"); 
             $("#footer").load("../Components/Footer/footer.php"); 
             //$(".course-card").load("../Components/Card/card.php");
         });
     </script>
 </head>
 <body>
-    <section id="header"></section>
+    <?php require "../Components/Header/header.php"?>
     <div id="container">
         <div id="pikachu">
             <img src="https://th.bing.com/th/id/R.62cf861a37885e67697ae494e247beeb?rik=HnbpSRdAe4IjLg&riu=http%3a%2f%2fimg2.wikia.nocookie.net%2f__cb20140611090049%2fadventuretimewithfinnandjake%2fimages%2fb%2fb3%2fPIKACHU-pikachu-29274386-861-927_(1).jpg&ehk=5d8UiAU%2b0n5kf%2b4tW7Oyba5VzDFaOf8cEy0aJFYmXL8%3d&risl=&pid=ImgRaw&r=0" alt="" id="img">

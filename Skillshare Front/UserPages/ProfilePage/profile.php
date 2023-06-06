@@ -131,8 +131,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           <option value="instructor" <?php echo isSelected('instructor', $_SESSION['type']); ?>>Instructor</option>
         </select>
   
-        <button type="submit">Confirm</button>
-        <button type="button" onclick="event.stopPropagation(); closeEditProfilePopup()">Back</button>
+        <button onclick="closeEditProfilePopup()">Confirm</button>
+        <button onclick="event.stopPropagation(); closeEditProfilePopup()">Back</button>
       </form>
     </div>
   </div>
@@ -143,7 +143,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   
       var form = document.getElementById("edit-profile-form");
       var name = document.getElementById("edit-name").value;
-      var email = document.getElementById("edit-email").value;
+      //var email = document.getElementById("edit-email").value;
       var phone = document.getElementById("edit-phone").value;
       var userType = document.getElementById("user-type").value;
   
@@ -152,7 +152,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   
       // Construct the query string with the form data
       var queryString = "?edit-name=" + encodeURIComponent(name) +
-                        "&edit-email=" + encodeURIComponent(email) +
+                        //"&edit-email=" + encodeURIComponent(email) +
                         "&edit-phone=" + encodeURIComponent(phone) +
                         "&user-type=" + encodeURIComponent(userType);
   
@@ -171,7 +171,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   
     // Attach the updateProfile function to the form submission event
     document.getElementById("edit-profile-form").addEventListener("submit", updateProfile);
-  </script>
+  </script> 
   
 
     <!-- Change Password Popup -->

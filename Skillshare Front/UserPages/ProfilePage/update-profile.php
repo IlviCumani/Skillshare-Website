@@ -12,8 +12,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $phone = $_GET['edit-phone'];
     $userType = $_GET['user-type'];
 
-    $userId = $_SESSION['user_id'];
-    $query = "UPDATE users SET name = '$name', email = '$email', phone = '$phone', user_type = '$userType' WHERE id = $userId";
+    $userId = $_SESSION['UserId'];
+    $query = "UPDATE users SET Username = '$name', email = '$email', Phone = '$phone', Type = '$userType' WHERE UserId = $userId";
     $statement = $pdo->prepare($query);
     $statement->execute();
 

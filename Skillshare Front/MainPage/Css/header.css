@@ -9,7 +9,7 @@ header#header{
     padding: 10px;
     background-color: white;
     height: fit-content;
-    border: 10px solid #8D86C9;
+    /* border: 10px solid #8D86C9; */
 }
 
 .header-text{

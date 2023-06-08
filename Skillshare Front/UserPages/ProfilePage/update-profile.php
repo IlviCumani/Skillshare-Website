@@ -13,10 +13,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     // }
     // Retrieve the submitted form data
     
-    $name = isset($_GET['edit-name']) ? validate($_GET['edit-name']) : '';
+    $name = isset($_GET['edit-name']) ? validate($_GET['edit-name']) : $_SESSION['username'];
     //$email = $_GET['edit-email'];
-    $phone = isset($_GET['edit-phone']) ? validate($_GET['edit-phone']) : '';
-    $userType = isset($_GET['user-type']) ? validate($_GET['user-type']) : '';
+    $phone = isset($_GET['edit-phone']) ? validate($_GET['edit-phone']) : $_SESSION['phone'];
+    $userType = isset($_GET['user-type']) ? validate($_GET['user-type']) : $_SESSION['type'];
 
     echo $_SESSION['email'];
     $query = 'UPDATE users SET Username = :name, Phone = :phone, Type = :userType WHERE email = :email';

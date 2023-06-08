@@ -22,12 +22,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $query = 'UPDATE users SET Username = :name, Phone = :phone, Type = :userType WHERE email = :email';
     $statement = $pdo->prepare($query);
     $statement->bindParam(':name', $name);
-    
+
     $statement->bindParam(':phone', $phone);
     $statement->bindParam(':userType', $userType);
     $statement->bindParam(':email', $_SESSION['email']);
     $statement->execute();
+
+    $_SESSION['username'] = $name;
+    $_SESSION['phone'] = $phone;
+    $_SESSION['type'] = $userType;
     header('Location: profile.php');
+    exit();
 } else {
     // Invalid request method
     echo "Invalid request method!";

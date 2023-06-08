@@ -11,6 +11,7 @@ require 'show_all_courses.php';
     <link rel="icon" href="../../MainPage/MainImg/favicon-removebg-preview.png">
     <link rel="stylesheet" href="../../MainPage/Css/header.css">
     <link rel="stylesheet" href="../../MainPage/Css/footer.css">
+    <link rel="stylesheet" href="../Components/Card/courseCard.css">
     <link rel="stylesheet" href="course.css">
     <link rel="stylesheet" href="searchBar.css">
     <link rel="stylesheet" href="all_courses.css">

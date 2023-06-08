@@ -1,5 +1,6 @@
-header{
-    position: fixed;   
+header#header{
+    position: fixed;
+    top: 0;  
     width: 100%;
     z-index: 100;
     display: flex;
@@ -8,6 +9,7 @@ header{
     padding: 10px;
     background-color: white;
     height: fit-content;
+    /* border: 10px solid #8D86C9; */
 }
 
 .header-text{

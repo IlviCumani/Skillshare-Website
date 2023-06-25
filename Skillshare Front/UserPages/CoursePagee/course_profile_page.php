@@ -1,6 +1,23 @@
 
 <!DOCTYPE html>
 <html lang="en">
+<?php 
+session_start();
+require 'thedatab.php';
+require 'course.php';
+
+if(!empty($_GET)){
+    $pdo = pdo_connect_mysql();
+    $couseId = isset($_GET['courseId']) ? $_GET['courseId'] : '';
+    $sql = 'SELECT * FROM course where CourseId = :courseid';
+    $statement = $pdo->prepare($sql);
+    $statement->bindParam(':courseid',$couseId);
+    $statement->execute();
+    $_wantedCourse = $statement->fetch();
+    $showCourse = new Course($couseId,$_wantedCourse['CourseName'], $_wantedCourse['ImageUrl'], $_wantedCourse['Description'], $_wantedCourse['Tag'], $_wantedCourse['Ongoing'], $_wantedCourse['CoursePrice'], $_wantedCourse['UserId']);
+
+}
+?>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -35,13 +52,13 @@
         <div id="profile-info-container">
             <div id="profile-info">
                 <div id="profile-img-container">
-                    <img src="https://media.movieassets.com/static/images/items/people/profiles/500/100/adria-rae-a8e9d40adad0aaa181be43ca27d9e29e.jpg" alt="Avatar" class="avatar">
+                    <img src="<?php if(isset($showCourse->ImageUrl)){echo $showCourse->ImageUrl;} ?>" alt="Avatar" class="avatar">
                 </div>
                 <div id="profile-info-text">
-                    <h2 id="username"><?php if(isset($_SESSION['username'])){echo $_SESSION['username'];} ?></h2>
-                    <h2 id="email"><?php if(isset($_SESSION['email'])){echo $_SESSION['email'];} ?></h2>
-                    <h2 id="phone"><?php if(isset($_SESSION['phone'])){echo $_SESSION['phone'];} ?></h2>
-                    <h2 id="level"><?php if(isset($_SESSION['type'])){echo $_SESSION['type'];} ?></h2>
+                    <h2 id="title"><?php if(isset($showCourse->CourseName)){echo $showCourse->CourseName;} ?></h2>
+                    <h2 id="tag"><?php if(isset($showCourse->Tag)){echo $showCourse->Tag;} ?></h2>
+                    <!-- <h2 id="phone"><?php if(isset($_SESSION['phone'])){echo $_SESSION['phone'];} ?></h2>
+                    <h2 id="level"><?php if(isset($_SESSION['type'])){echo $_SESSION['type'];} ?></h2> -->
                     <!-- <h2 id="level">Instructor</h2> -->
                 </div>
             </div>
@@ -52,15 +69,11 @@
         
         <section class="course-details">
             <div>
-                <h2>Course Title</h2>
-                <p>Course description goes here</p>
-            </div>
-            <div> 
-                <h3>Course Assignment</h3>
-                <p>Lorem ipsum </p>
+                <h2><?php echo $showCourse->CourseName; ?></h2>
+                <p><?php echo $showCourse->Description; ?></p>
             </div>
             <div class="course-buttons">
-                <a href="../../UserPages/ProfilePage/profile.php"><button class="btn">Join Course</button></a>
+                <a href="../../UserPages/ProfilePage/profile.php"><button class="btn">Back</button></a>
                 <!--<button class="btn">Create Assignment</button>--> 
                 <!--<button class="btn">Edit course page</button> -->
             </div>

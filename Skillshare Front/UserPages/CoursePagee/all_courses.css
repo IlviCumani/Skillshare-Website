@@ -1,15 +1,15 @@
 #filter_bar{
-    padding: 100px;
+    margin-top: 10px;
 }
 
 #filterDiv {
     float: left;
     background-color: #2196F3;
     color: #ffffff;
-    width: 100px;
-    line-height: 100px;
+    width: 10px;
+    line-height: 10px;
     text-align: center;
-    padding-top: 100px;
+
     display: none;
   }
   
@@ -18,7 +18,7 @@
   }
   
   .container {
-    margin-top: 20px;
+    margin-top: 10px;
     overflow: hidden;
   }
   
@@ -26,7 +26,7 @@
   .filter {
     border: none;
     outline: none;
-    padding: 100px 61px;
+    padding: 10px 6px;
     background-color: #f1f1f1;
     cursor: pointer;
   }

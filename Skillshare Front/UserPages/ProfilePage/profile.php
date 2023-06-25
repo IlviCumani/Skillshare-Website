@@ -210,7 +210,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <h3 id="course-category"><?php echo $the_course->Tag ?></h2>
                     <h3 id="instructor"><?php echo find_Instructor($the_course->UserId)?></h2>
                 </div>
-                <a href="../CoursePagee/course_profile_page.php"><button id="course-button">Continue</button></a>
+                <button id="course-button" value="<?php echo $the_course->CourseId ?>" onclick="goCourse(event)">Continue</button>
             </div>
         <?php endforeach;?>
 
@@ -301,6 +301,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         else{
             mycourses.style.display = "none";
+        }
+    </script>
+
+    <script>
+        function goCourse(event){
+            const _courseId = event.target.value;
+            window.location.href = "../CoursePagee/course_profile_page.php?courseId=" + _courseId;
         }
     </script>
 </body>

@@ -116,19 +116,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="popup-content">
       <form id="edit-profile-form" action="update-profile.php" method="GET">
         <label for="edit-name">Name:</label>
-        <input type="text" id="edit-name" name="edit-name">
+        <input type="text" id="edit-name" name="edit-name" value="<?php echo $_SESSION['username'] ?>">
   
         <label for="edit-email">Email:</label>
-        <input type="email" id="edit-email" name="edit-email">
+        <input type="email" id="edit-email" name="edit-email" value = "<?php echo $_SESSION['email'] ?>">
   
         <label for="edit-phone">Phone Number:</label>
-        <input type="text" id="edit-phone" name="edit-phone">
+        <input type="text" id="edit-phone" name="edit-phone" value = "<?php echo $_SESSION['phone'] ?>">
   
         <label for="user-type">User Type:</label>
         <select id="user-type" name="user-type">
-          <option value="learner" <?php echo isSelected('learner', $_SESSION['type']); ?>>Learner</option>
-          <option value="premium" <?php echo isSelected('premium', $_SESSION['type']); ?>>Premium</option>
-          <option value="instructor" <?php echo isSelected('instructor', $_SESSION['type']); ?>>Instructor</option>
+          <option value="Learner" <?php echo isSelected('Learner', $_SESSION['type']); ?>>Learner</option>
+          <option value="Premium" <?php echo isSelected('Premium', $_SESSION['type']); ?>>Premium</option>
+          <option value="Instructor" <?php echo isSelected('Instructor', $_SESSION['type']); ?>>Instructor</option>
         </select>
   
         <button onclick="closeEditProfilePopup()">Confirm</button>

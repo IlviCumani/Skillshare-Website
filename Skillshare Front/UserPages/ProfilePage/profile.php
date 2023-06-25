@@ -210,7 +210,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <h3 id="course-category"><?php echo $the_course->Tag ?></h2>
                     <h3 id="instructor"><?php echo find_Instructor($the_course->UserId)?></h2>
                 </div>
-                <button id="course-button">Continue</button> 
+                <a href="../CoursePagee/course_profile_page.php"><button id="course-button">Continue</button></a>
             </div>
         <?php endforeach;?>
 

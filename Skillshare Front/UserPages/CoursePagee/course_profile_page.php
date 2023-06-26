@@ -52,14 +52,14 @@ if(!empty($_GET)){
   margin: 20px;
   border-radius: 4px;
   border: 1px solid #ddd;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Add a box shadow */
-  float: left; /* Make the section float */
-  width: calc(30% - 10px); /* Set the desired width and adjust margin */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  float: left;
+  width: calc(30% - 10px);
   margin-right: 20px;
 }
 
 .description:last-child {
-  margin-right: 0; /* Remove margin for the last section */
+  margin-right: 0;
 }
 
 .videos {
@@ -68,23 +68,23 @@ if(!empty($_GET)){
   margin: 20px;
   border-radius: 4px;
   border: 1px solid #ddd;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Add a box shadow */
-  float: right; /* Make the section float */
-  width: calc(65% - 10px); /* Set the desired width and adjust margin */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  float: right; 
+  width: calc(65% - 10px); 
   margin-left: 20px;
 }
 
 .videos:last-child {
-  margin-left: 0; /* Remove margin for the last parallel section */
+  margin-left: 0; 
 }
 
 .description h2, .videos h2 {
-  font-size: 24px; /* Increase the font size */
+  font-size: 24px;
   margin-bottom: 10px;
-  color: #333; /* Set the text color */
-  text-transform: uppercase; /* Convert the text to uppercase */
-  font-weight: bold; /* Make the text bold */
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1); /* Add a subtle text shadow */
+  color: #333;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
 }
 
 .description p, .videos p {
@@ -92,6 +92,52 @@ if(!empty($_GET)){
   line-height: 1.5;
   
 }
+
+
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex-basis: calc(50% - 10px); /* Adjust the width as per your preference */
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 50%; 
+  overflow: hidden;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.card-content {
+  padding: 16px;
+}
+
+.card-title {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.card-description {
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
 </style>
 </head>
 <body>
@@ -125,10 +171,36 @@ if(!empty($_GET)){
         <section class="videos">
             <div>
                 <h2>Videos</h2>
-                <p>video one</p>
-                <p>video two</p>
-                <p>video three</p>
-                <p>video four</p>
+                <div class="card-container">
+                    <div class="card">
+                        <div class="video-container">
+                        <iframe width="1122" height="631" src="https://www.youtube.com/embed/ID" title="Title" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <div class="card-content">
+                        <h2 class="card-title">Video Title 1</h2>
+                        <p class="card-description">Video description goes here...</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="video-container">
+                            <iframe width="1122" height="631" src="https://www.youtube.com/embed/ID" title="Title" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <div class="card-content">
+                            <h2 class="card-title">Video Title 2</h2>
+                            <p class="card-description">Video description goes here...</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="video-container">
+                        <iframe width="1122" height="631" src="https://www.youtube.com/embed/ID" title="Title" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <div class="card-content">
+                        <h2 class="card-title">Video Title 3</h2>
+                        <p class="card-description">Video description goes here...</p>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div>
                 <h2>Lecture</h2>
@@ -152,6 +224,5 @@ if(!empty($_GET)){
       </section>
       <script src="../Skillshare Front/MainPage/Script/navig.js"></script>
       <script src="./MainPage/Script/menu.js"></script>
-      
 </body>
 </html>

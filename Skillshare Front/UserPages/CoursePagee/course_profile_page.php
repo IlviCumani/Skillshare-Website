@@ -45,6 +45,54 @@ if(!empty($_GET)){
         $("#footer").load("footer.php");
     });
 </script>
+<style>
+.description {
+  background-color: #f1f3f4;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Add a box shadow */
+  float: left; /* Make the section float */
+  width: calc(30% - 10px); /* Set the desired width and adjust margin */
+  margin-right: 20px;
+}
+
+.description:last-child {
+  margin-right: 0; /* Remove margin for the last section */
+}
+
+.videos {
+  background-color: #f1f3f4;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Add a box shadow */
+  float: right; /* Make the section float */
+  width: calc(65% - 10px); /* Set the desired width and adjust margin */
+  margin-left: 20px;
+}
+
+.videos:last-child {
+  margin-left: 0; /* Remove margin for the last parallel section */
+}
+
+.description h2, .videos h2 {
+  font-size: 24px; /* Increase the font size */
+  margin-bottom: 10px;
+  color: #333; /* Set the text color */
+  text-transform: uppercase; /* Convert the text to uppercase */
+  font-weight: bold; /* Make the text bold */
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1); /* Add a subtle text shadow */
+}
+
+.description p, .videos p {
+  font-size: 14px;
+  line-height: 1.5;
+  
+}
+</style>
 </head>
 <body>
     <section id="header"></section>
@@ -67,18 +115,31 @@ if(!empty($_GET)){
         </div>
     </section>
         
-        <section class="course-details">
+        <section class="description">
             <div>
                 <h2><?php echo $showCourse->CourseName; ?></h2>
                 <p><?php echo $showCourse->Description; ?></p>
             </div>
-            <div class="course-buttons">
-                <a href="../../UserPages/ProfilePage/profile.php"><button class="btn">Back</button></a>
-                <!--<button class="btn">Create Assignment</button>--> 
-                <!--<button class="btn">Edit course page</button> -->
+        </section>
+
+        <section class="videos">
+            <div>
+                <h2>Videos</h2>
+                <p>video one</p>
+                <p>video two</p>
+                <p>video three</p>
+                <p>video four</p>
+            </div>
+            <div>
+                <h2>Lecture</h2>
             </div>
         </section>
 
+        <div class="course-buttons">
+                <a href="../../UserPages/ProfilePage/profile.php"><button class="btn">Back</button></a>
+                <!--<button class="btn">Add Lecture</button>--> 
+                <!--<button class="btn">Add video</button> -->
+            </div>
     <section class="footer">
         <nav class="icons_width">
           <div class="icons">

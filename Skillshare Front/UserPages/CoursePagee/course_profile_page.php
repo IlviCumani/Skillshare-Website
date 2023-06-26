@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <?php 
@@ -30,6 +29,7 @@ if(!empty($_GET)){
     <link rel="stylesheet" href="../../UserPages/ProfilePage/Css/profile.css">
     <link rel="stylesheet" href="../UserPages/Components/Card/courseCard.css">
     <link rel="stylesheet" href="course.css">
+    <link rel="stylesheet" href="course_profile_page.css">
     <link rel="stylesheet" href="searchBar.css"><script
     src="https://code.jquery.com/jquery-3.3.1.js"
     integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
@@ -45,100 +45,6 @@ if(!empty($_GET)){
         $("#footer").load("footer.php");
     });
 </script>
-<style>
-.description {
-  background-color: #f1f3f4;
-  padding: 20px;
-  margin: 20px;
-  border-radius: 4px;
-  border: 1px solid #ddd;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  float: left;
-  width: calc(30% - 10px);
-  margin-right: 20px;
-}
-
-.description:last-child {
-  margin-right: 0;
-}
-
-.videos {
-  background-color: #f1f3f4;
-  padding: 20px;
-  margin: 20px;
-  border-radius: 4px;
-  border: 1px solid #ddd;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  float: right; 
-  width: calc(65% - 10px); 
-  margin-left: 20px;
-}
-
-.videos:last-child {
-  margin-left: 0; 
-}
-
-.description h2, .videos h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
-  color: #333;
-  text-transform: uppercase;
-  font-weight: bold;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
-}
-
-.description p, .videos p {
-  font-size: 14px;
-  line-height: 1.5;
-  
-}
-
-
-
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.card {
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  flex-basis: calc(50% - 10px); /* Adjust the width as per your preference */
-  margin-bottom: 20px;
-  overflow: hidden;
-}
-
-.video-container {
-  position: relative;
-  padding-bottom: 50%; 
-  overflow: hidden;
-}
-
-.video-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.card-content {
-  padding: 16px;
-}
-
-.card-title {
-  font-size: 20px;
-  margin-bottom: 8px;
-}
-
-.card-description {
-  font-size: 14px;
-  margin-bottom: 16px;
-}
-
-</style>
 </head>
 <body>
     <section id="header"></section>
@@ -204,14 +110,23 @@ if(!empty($_GET)){
             </div>
             <div>
                 <h2>Lecture</h2>
+                <div class="pdf-card">
+                    <div class="pdf-container">
+                        <embed src="link" type="application/pdf" width="100%" height="100%" />
+                    </div>
+                    <a href="link" class="pdf-link" target="_blank">View PDF</a>
+                </div>
             </div>
         </section>
 
-        <div class="course-buttons">
-                <a href="../../UserPages/ProfilePage/profile.php"><button class="btn">Back</button></a>
+        <section id="button_back">
+            <div class="course-buttons">
+                <a href="../../UserPages/ProfilePage/profile.php"><button class="back_button">Back</button></a>
                 <!--<button class="btn">Add Lecture</button>--> 
                 <!--<button class="btn">Add video</button> -->
             </div>
+        </section>
+
     <section class="footer">
         <nav class="icons_width">
           <div class="icons">

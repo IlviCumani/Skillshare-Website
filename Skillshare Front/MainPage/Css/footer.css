@@ -5,7 +5,7 @@
     background: #414145;
     background-position: center;
     background-size: cover;
-    position: fixed;
+    position: relative;
     font-size: 2vh;
     bottom: 0;
   }

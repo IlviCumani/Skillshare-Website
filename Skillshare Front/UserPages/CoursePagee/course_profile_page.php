@@ -45,6 +45,32 @@ if(!empty($_GET)){
         $("#footer").load("footer.php");
     });
 </script>
+<script>
+    function openVideoForm() {
+      document.getElementById("videoForm").classList.add("active");
+    }
+
+    function closeVideoForm() {
+      document.getElementById("videoForm").classList.remove("active");
+    }
+
+    function submitVideoForm() {
+      var videoUrl = document.getElementById("videoUrl").value;
+    }
+  </script>
+  <script>
+    function openLectureForm() {
+      document.getElementById("lectureForm").classList.add("active");
+    }
+
+    function closeLectureForm() {
+      document.getElementById("lectureForm").classList.remove("active");
+    }
+
+    function submitLectureForm() {
+      var lecture = document.getElementById("lecture").value;
+    }
+  </script>
 </head>
 <body>
     <section id="header"></section>
@@ -76,7 +102,15 @@ if(!empty($_GET)){
 
         <section class="videos">
             <div>
-                <h2>Videos</h2>
+                <div style="display: flex;width:100%; margin-bottom:2%; padding-left:2%;padding-right:2%">
+                    <h2 style="margin-right: 70%; @media screen and (max-width:500px) {margin-right:20%;}; @media screen and (max-width:800px) {margin-right:40%;}">Videos</h2> 
+                    <button onclick="openVideoForm()" class="btn" style="width: 30% ;">Add Video</button>
+                </div>
+                <div id="videoForm" class="form-container">
+                    <input type="text" id="videoUrl" placeholder="Enter YouTube video URL" required>
+                    <button onclick="submitVideoForm()" class="btn"  style="width: 49%; margin-right: 0.75%;" >Submit</button>
+                    <button onclick="closeVideoForm()" class="btn"  style="width: 49%;">Close</button>
+                </div>
                 <div class="card-container">
                     <div class="card">
                         <div class="video-container">
@@ -108,8 +142,15 @@ if(!empty($_GET)){
                     </div>
                 </div>
             </div>
-            <div>
-                <h2>Lecture</h2>
+            <div style="display: flex;width:100%; margin-bottom:2%; padding-left:2%;padding-right:2%;">
+                    <h2 style="margin-right: 65%; @media screen and (max-width:500px) {margin-right:10%;}; @media screen and (max-width:800px) {margin-right:40%;}">Lectures</h2> 
+                    <button onclick="openLectureForm()" class="btn" style="width: 30% ;">Add Lecture</button>
+                </div>
+                <div id="lectureForm" class="form-container">
+                    <input type="file" id="lecture" placeholder="Enter PDF" required class="upload">
+                    <button onclick="submitLectureForm()" class="btn"  style="width: 49%; margin-right: 0.75%;" >Submit</button>
+                    <button onclick="closeLectureForm()" class="btn"  style="width: 49%;">Close</button>
+                </div>
                 <div class="pdf-card">
                     <div class="pdf-container">
                         <embed src="link" type="application/pdf" width="100%" height="100%" />

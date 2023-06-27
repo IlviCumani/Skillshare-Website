@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php 
-session_start();
-require 'thedatab.php';
+//session_start();
+// require 'thedatab.php';
 require 'course.php';
+require 'showVideos.php';
+// require 'videos.php';
 
 if(!empty($_GET)){
     $pdo = pdo_connect_mysql();
@@ -82,9 +84,10 @@ if(!empty($_GET)){
                 </div>
                 <div id="profile-info-text">
                     <h2 id="title"><?php if(isset($showCourse->CourseName)){echo $showCourse->CourseName;} ?></h2>
-                    <h2 id="tag"><?php if(isset($showCourse->Tag)){echo $showCourse->Tag;} ?></h2>
-                    <!-- <h2 id="phone"><?php if(isset($_SESSION['phone'])){echo $_SESSION['phone'];} ?></h2>
-                    <h2 id="level"><?php if(isset($_SESSION['type'])){echo $_SESSION['type'];} ?></h2> -->
+                   <!-- <h2 id="tag"></h2> -->
+                   <br>
+                    <h2 id="phone"><?php if(isset($showCourse->Tag)){echo $showCourse->Tag;} ?><h2>
+                    <h2 id="level"><h2>
                     <!-- <h2 id="level">Instructor</h2> -->
                 </div>
             </div>
@@ -102,41 +105,41 @@ if(!empty($_GET)){
 
         <section class="videos">
             <div>
+               
                 <div style="display: flex;width:100%; margin-bottom:2%; padding-left:2%;padding-right:2%">
                     <h2 style="margin-right: 70%; @media screen and (max-width:500px) {margin-right:20%;}; @media screen and (max-width:800px) {margin-right:40%;}">Videos</h2> 
+                    <?php if(count($_GET) > 1 && $_GET['stp'] && $_GET['stp'] == "3"): ?>
                     <button onclick="openVideoForm()" class="btn" style="width: 30% ;">Add Video</button>
+                    <?php  endif?>
                 </div>
+                
                 <div id="videoForm" class="form-container">
+                    <form action="">
                     <input type="text" id="videoUrl" placeholder="Enter YouTube video URL" required>
-                    <button onclick="submitVideoForm()" class="btn"  style="width: 49%; margin-right: 0.75%;" >Submit</button>
+                    <button value="<?php echo $showCourse->CourseId?>" onclick="registerVideo(event)" class="btn"  style="width: 49%; margin-right: 0.75%;" >Submit</button>
                     <button onclick="closeVideoForm()" class="btn"  style="width: 49%;">Close</button>
+                    </form>
                 </div>
                 <div class="card-container">
+                <?php foreach($_SESSION['wantedVideos'] as $wantedVideos): ?>
+                <?php if($wantedVideos->courseId == $showCourse->CourseId): ?>
                     <div class="card">
                         <div class="video-container">
-                        <iframe width="1122" height="631" src="https://www.youtube.com/embed/ID" title="Title" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+                        <iframe width="1122" height="631" src="<?php echo $wantedVideos->yturl;?>" title="Title" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         </div>
-                        
+
                     </div>
-                    
-                    <div class="card">
-                        <div class="video-container">
-                            <iframe width="1122" height="631" src="https://www.youtube.com/embed/ID" title="Title" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                        </div>
-                        
-                    </div>
-                    <div class="card">
-                        <div class="video-container">
-                        <iframe width="1122" height="631" src="https://www.youtube.com/embed/ID" title="Title" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                        </div>
-                        
-                    </div>
+                <?php endif; ?>
+                <?php endforeach;?>
                 </div>
             </div>
             <div style="display: flex;width:100%; margin-bottom:2%; padding-left:2%;padding-right:2%;">
                     <h2 style="margin-right: 65%; @media screen and (max-width:500px) {margin-right:10%;}; @media screen and (max-width:800px) {margin-right:40%;}">Lectures</h2> 
+                    <?php if(count($_GET) > 1 && $_GET['stp'] && $_GET['stp'] == "3"): ?>
                     <button onclick="openLectureForm()" class="btn" style="width: 30% ;">Add Lecture</button>
-                </div>
+                    <?php endif ?>
+            </div>
                 <div id="lectureForm" class="form-container">
                     <input type="file" id="lecture" placeholder="Enter PDF" required class="upload">
                     <button onclick="submitLectureForm()" class="btn"  style="width: 49%; margin-right: 0.75%;" >Submit</button>
@@ -158,6 +161,24 @@ if(!empty($_GET)){
                 <!--<button class="btn">Add video</button> -->
             </div>
         </section>
+        <script>
+            function registerVideo(event){
+                event.preventDefault();
+                //console.log(event.target.value);
+                const __courseid = event.target.value;
+                const youtubeLink = document.getElementById("videoUrl").value;
+                const youtubeUrlPattern = /youtube\.com\/watch\?v=([\w-]+)/;
+                const match = youtubeLink.match(youtubeUrlPattern);
+
+                if (match && match[1]) {
+                    const videoId = match[1];
+                    const embeddedLink = `https://www.youtube.com/embed/${videoId}`;
+                    window.location.href = "registerVideo.php?yturl="+embeddedLink+"&courseId="+__courseid;
+                }
+                
+            }
+
+        </script>
 
     <section class="footer">
         <nav class="icons_width">

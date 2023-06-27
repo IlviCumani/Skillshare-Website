@@ -16,6 +16,7 @@ if(!empty($_POST)){
     if($statement->rowCount() > 0){
         $the_data = $statement->fetch();
         if($password === $the_data['Password']){
+            $_SESSION['idOfUser'] = $the_data['UserId'];
             $_SESSION['username'] =  $the_data['Username'];
             $_SESSION['email'] = $the_data['email'];
             $_SESSION['type'] = $the_data['Type'];

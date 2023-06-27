@@ -6,6 +6,7 @@
 require 'course.php';
 require 'showVideos.php';
 // require 'videos.php';
+require 'showPDF.php';
 
 if(!empty($_GET)){
     $pdo = pdo_connect_mysql();
@@ -52,8 +53,10 @@ if(!empty($_GET)){
       document.getElementById("videoForm").classList.add("active");
     }
 
-    function closeVideoForm() {
+    function closeVideoForm(event) {
+      event.preventDefault();
       document.getElementById("videoForm").classList.remove("active");
+      window.location.href = "course_profile_page.php?courseId="+$courseId+"&stp=3";
     }
 
     function submitVideoForm() {
@@ -117,7 +120,7 @@ if(!empty($_GET)){
                     <form action="">
                     <input type="text" id="videoUrl" placeholder="Enter YouTube video URL" required>
                     <button value="<?php echo $showCourse->CourseId?>" onclick="registerVideo(event)" class="btn"  style="width: 49%; margin-right: 0.75%;" >Submit</button>
-                    <button onclick="closeVideoForm()" class="btn"  style="width: 49%;">Close</button>
+                    <button onclick="closeVideoForm(event)" class="btn"  style="width: 49%;">Close</button>
                     </form>
                 </div>
                 <div class="card-container">
@@ -141,16 +144,22 @@ if(!empty($_GET)){
                     <?php endif ?>
             </div>
                 <div id="lectureForm" class="form-container">
-                    <input type="file" id="lecture" placeholder="Enter PDF" required class="upload">
-                    <button onclick="submitLectureForm()" class="btn"  style="width: 49%; margin-right: 0.75%;" >Submit</button>
+                    <form action="">
+                    <input type="text" id="lecture" placeholder="Enter PDF" required class="upload">
+                    <button value="<?php echo $showCourse->CourseId?>"onclick="registerPDF(event)" class="btn"  style="width: 49%; margin-right: 0.75%;" >Submit</button>
                     <button onclick="closeLectureForm()" class="btn"  style="width: 49%;">Close</button>
+                    </form>
                 </div>
+                <?php foreach($_SESSION['showpdf'] as $thepdf): ?>
+                 <?php if($thepdf->courseId == $showCourse->CourseId): ?>   
                 <div class="pdf-card">
                     <div class="pdf-container">
-                        <embed src="link" type="application/pdf" width="100%" height="100%" />
+                        <iframe src="<?php echo $thepdf->filename ?>"  width="100%" height="100%" ></iframe>
                     </div>
-                    <a href="link" class="pdf-link" target="_blank">View PDF</a>
+                    <a href="<?php echo $thepdf->filename?>" class="pdf-link" target="_blank">View PDF</a>
                 </div>
+                <?php endif;?>
+                <?php endforeach;?>
             </div>
         </section>
 
@@ -161,6 +170,18 @@ if(!empty($_GET)){
                 <!--<button class="btn">Add video</button> -->
             </div>
         </section>
+        <script>
+            function registerPDF(event){
+                const __pdflink = document.getElementById("lecture").value;
+                event.preventDefault();
+                const __courseid = event.target.value;
+                console.log("Hello");
+                console.log(__courseid);
+                const next = "registerPDF.php?pdf="+__pdflink+"&courseId="+__courseid;
+                window.location.href = next;
+
+            }
+        </script>
         <script>
             function registerVideo(event){
                 event.preventDefault();

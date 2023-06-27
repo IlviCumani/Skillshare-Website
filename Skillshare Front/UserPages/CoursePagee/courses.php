@@ -47,7 +47,7 @@ require_once 'show_all_courses.php';
     </section>
     
     <section class="course-section">
-    <h2>Popular Courses</h2>
+    <h2><?php if(empty($_GET)){echo "Popular Courses";}else{echo "Searched Courses";} ?></h2>
         <?php if(empty($_GET)): ?>
         <div class="course-container">
             <?php $cnt = 0 ?>

@@ -116,29 +116,20 @@ if(!empty($_GET)){
                         <div class="video-container">
                         <iframe width="1122" height="631" src="https://www.youtube.com/embed/ID" title="Title" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         </div>
-                        <div class="card-content">
-                        <h2 class="card-title">Video Title 1</h2>
-                        <p class="card-description">Video description goes here...</p>
-                        </div>
+                        
                     </div>
                     
                     <div class="card">
                         <div class="video-container">
                             <iframe width="1122" height="631" src="https://www.youtube.com/embed/ID" title="Title" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         </div>
-                        <div class="card-content">
-                            <h2 class="card-title">Video Title 2</h2>
-                            <p class="card-description">Video description goes here...</p>
-                        </div>
+                        
                     </div>
                     <div class="card">
                         <div class="video-container">
                         <iframe width="1122" height="631" src="https://www.youtube.com/embed/ID" title="Title" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         </div>
-                        <div class="card-content">
-                        <h2 class="card-title">Video Title 3</h2>
-                        <p class="card-description">Video description goes here...</p>
-                        </div>
+                        
                     </div>
                 </div>
             </div>

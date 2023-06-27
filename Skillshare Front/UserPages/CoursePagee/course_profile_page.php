@@ -125,8 +125,10 @@ if(!empty($_GET)){
                 <?php if($wantedVideos->courseId == $showCourse->CourseId): ?>
                     <div class="card">
                         <div class="video-container">
+
                         <iframe width="1122" height="631" src="<?php echo $wantedVideos->yturl;?>" title="Title" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         </div>
+
                     </div>
                 <?php endif; ?>
                 <?php endforeach;?>

@@ -11,6 +11,7 @@ require 'show_all_courses.php';
     <link rel="icon" href="../../MainPage/MainImg/favicon-removebg-preview.png">
     <link rel="stylesheet" href="../../MainPage/Css/header.css">
     <link rel="stylesheet" href="../../MainPage/Css/footer.css">
+    <link rel="stylesheet" href="../Components/Card/courseCard.css">
     <link rel="stylesheet" href="course.css">
     <link rel="stylesheet" href="searchBar.css">
     <link rel="stylesheet" href="all_courses.css">
@@ -34,29 +35,29 @@ require 'show_all_courses.php';
 </head>
 <body>
     <section id="header"></section>
-    <section id="filter_bar">
-        <div id="filterDiv">
-            <button class="filter active" onclick="filterSelection('all')"> Show all</button>
-            <button class="filter" onclick="filterSelection('programming')"> Programming</button>
-            <button class="filter" onclick="filterSelection('dancing')"> Dancing</button>
-            <button class="filter" onclick="filterSelection('cooking')"> Cooking</button>
-            <button class="filter" onclick="filterSelection('drawing')"> Drawing</button>
-            <button class="filter" onclick="filterSelection('Photo')"> Photography</button>
-            <button class="filter" onclick="filterSelection('music')"> Music</button>
-            <button class="filter" onclick="filterSelection('language')"> Language</button>
-            <button class="filter" onclick="filterSelection('fit')"> Fitness</button>
-            <button class="filter" onclick="filterSelection('business')"> Business</button>
-            <button class="filter" onclick="filterSelection('market')"> Marketing</button>
-            <button class="filter" onclick="filterSelection('design')"> Design</button>
-            <button class="filter" onclick="filterSelection('calc')"> Calculus</button>
-            <button class="filter" onclick="filterSelection('physics')">Physics</button>
-            <button class="filter" onclick="filterSelection('chem')"> Chemistry</button>
-            <button class="filter" onclick="filterSelection('bio')"> Biology</button>
-            <button class="filter" onclick="filterSelection('psy')"> Psychology</button>
-            <button class="filter" onclick="filterSelection('history')"> History</button>
-            <button class="filter" onclick="filterSelection('geo')"> Geography</button>
-        </div>
-    </section> 
+    <!-- <section id="container">
+            <div class="filterDiv">
+                <button class="filter active" onclick="filterSelection('all')"> Show all</button>
+                <button class="filter" onclick="filterSelection('programming')"> Programming</button>
+                <button class="filter" onclick="filterSelection('dancing')"> Dancing</button>
+                <button class="filter" onclick="filterSelection('cooking')"> Cooking</button>
+                <button class="filter" onclick="filterSelection('drawing')"> Drawing</button>
+                <button class="filter" onclick="filterSelection('Photo')"> Photography</button>
+                <button class="filter" onclick="filterSelection('music')"> Music</button>
+                <button class="filter" onclick="filterSelection('language')"> Language</button>
+                <button class="filter" onclick="filterSelection('fit')"> Fitness</button>
+                <button class="filter" onclick="filterSelection('business')"> Business</button>
+                <button class="filter" onclick="filterSelection('market')"> Marketing</button>
+                <button class="filter" onclick="filterSelection('design')"> Design</button>
+                <button class="filter" onclick="filterSelection('calc')"> Calculus</button>
+                <button class="filter" onclick="filterSelection('physics')">Physics</button>
+                <button class="filter" onclick="filterSelection('chem')"> Chemistry</button>
+                <button class="filter" onclick="filterSelection('bio')"> Biology</button>
+                <button class="filter" onclick="filterSelection('psy')"> Psychology</button>
+                <button class="filter" onclick="filterSelection('history')"> History</button>
+                <button class="filter" onclick="filterSelection('geo')"> Geography</button>
+            </div>
+        </section>   -->
     <section class="course-section">
         <div class="course-container">
         <?php $cnt = 0?>

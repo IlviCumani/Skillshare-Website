@@ -93,7 +93,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div id="profile-info-container">
             <div id="profile-info">
                 <div id="profile-img-container">
-                    <img src="https://media.movieassets.com/static/images/items/people/profiles/500/100/adria-rae-a8e9d40adad0aaa181be43ca27d9e29e.jpg" alt="Avatar" class="avatar">
+                    <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="Avatar" class="avatar">
                 </div>
                 <div id="profile-info-text">
                     <h2 id="username"><?php if(isset($_SESSION['username'])){echo $_SESSION['username'];} ?></h2>
@@ -116,19 +116,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="popup-content">
       <form id="edit-profile-form" action="update-profile.php" method="GET">
         <label for="edit-name">Name:</label>
-        <input type="text" id="edit-name" name="edit-name">
+        <input type="text" id="edit-name" name="edit-name" value="<?php echo $_SESSION['username'] ?>">
   
         <label for="edit-email">Email:</label>
-        <input type="email" id="edit-email" name="edit-email">
+        <input type="email" id="edit-email" name="edit-email" value = "<?php echo $_SESSION['email'] ?>">
   
         <label for="edit-phone">Phone Number:</label>
-        <input type="text" id="edit-phone" name="edit-phone">
+        <input type="text" id="edit-phone" name="edit-phone" value = "<?php echo $_SESSION['phone'] ?>">
   
         <label for="user-type">User Type:</label>
         <select id="user-type" name="user-type">
-          <option value="learner" <?php echo isSelected('learner', $_SESSION['type']); ?>>Learner</option>
-          <option value="premium" <?php echo isSelected('premium', $_SESSION['type']); ?>>Premium</option>
-          <option value="instructor" <?php echo isSelected('instructor', $_SESSION['type']); ?>>Instructor</option>
+          <option value="Learner" <?php echo isSelected('Learner', $_SESSION['type']); ?>>Learner</option>
+          <option value="Premium" <?php echo isSelected('Premium', $_SESSION['type']); ?>>Premium</option>
+          <option value="Instructor" <?php echo isSelected('Instructor', $_SESSION['type']); ?>>Instructor</option>
         </select>
   
         <button onclick="closeEditProfilePopup()">Confirm</button>
@@ -210,7 +210,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <h3 id="course-category"><?php echo $the_course->Tag ?></h2>
                     <h3 id="instructor"><?php echo find_Instructor($the_course->UserId)?></h2>
                 </div>
-                <button id="course-button">Continue</button> 
+                <button id="course-button" value="<?php echo $the_course->CourseId ?>" onclick="goCourse(event)">Continue</button>
             </div>
         <?php endforeach;?>
 
@@ -301,6 +301,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         else{
             mycourses.style.display = "none";
+        }
+    </script>
+
+    <script>
+        function goCourse(event){
+            const _courseId = event.target.value;
+            window.location.href = "../CoursePagee/course_profile_page.php?courseId=" + _courseId;
         }
     </script>
 </body>

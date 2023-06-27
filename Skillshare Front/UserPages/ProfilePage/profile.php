@@ -55,6 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         function closeEditProfilePopup() {
             document.getElementById("edit-profile-popup").style.display = "none";
+            window.location.reload();
         }
 
         function openChangePasswordPopup() {
@@ -131,7 +132,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           <option value="Instructor" <?php echo isSelected('Instructor', $_SESSION['type']); ?>>Instructor</option>
         </select>
   
-        <button onclick="closeEditProfilePopup()">Confirm</button>
+        <button onclick="window.location.reload()">Confirm</button>
         <button onclick="event.stopPropagation(); closeEditProfilePopup()">Back</button>
       </form>
     </div>

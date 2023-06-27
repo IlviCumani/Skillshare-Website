@@ -254,7 +254,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <h3 id="course-category"><?php echo $show_course->Tag ?></h2>
                     <h3 id="instructor"><?php echo find_Instructor($show_course->UserId)?></h2>
                 </div>
-                <button id="course-button">Continue</button> 
+                <button id="course-button" value="<?php echo $show_course->CourseId ?>" onclick="instCourse(event)" >Continue</button> 
             </div>
             <?php endforeach;?>
         
@@ -308,6 +308,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         function goCourse(event){
             const _courseId = event.target.value;
             window.location.href = "../CoursePagee/course_profile_page.php?courseId=" + _courseId;
+        }
+        function instCourse(event){
+            const _courseid = event.target.value;
+            window.location.href = "../CoursePagee/course_profile_page.php?courseId=" + _courseid + "&stp="+"3"; 
         }
     </script>
 </body>
